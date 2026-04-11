@@ -1,0 +1,68 @@
+---
+// src/components/Services.astro
+const waBase = "https://wa.me/5551996688568?text=";
+const services = [
+  {
+    icon: "handyman",
+    title: "Pane Mecânica",
+    desc: "Diagnóstico e reparo rápido no local.",
+    ctaMobile: "SOLICITAR MECÂNICO AGORA",
+    ctaDesktop: "SOLICITAR VIA WHATSAPP",
+    waMsg: "PRECISO%20DE%20SOCORRO%20MEC%C3%82NICO%20URGENTE!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  },
+  {
+    icon: "electric_bolt",
+    title: "Troca de Bateria",
+    desc: "Substituição imediata com garantia.",
+    ctaMobile: "RECARREGAR MINHA BATERIA",
+    ctaDesktop: "SOLICITAR VIA WHATSAPP",
+    waMsg: "PRECISO%20DE%20SOCORRO%20DE%20BATERIA!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  },
+  {
+    icon: "local_gas_station",
+    title: "Pane Seca",
+    desc: "Entrega de combustível na emergência.",
+    ctaMobile: "PRECISO DE COMBUSTÍVEL",
+    ctaDesktop: "SOLICITAR VIA WHATSAPP",
+    waMsg: "ESTOU%20COM%20PANE%20SECA!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  },
+  {
+    icon: "device_thermostat",
+    title: "Superaquecimento",
+    desc: "Resfriamento e diagnósticos no motor.",
+    ctaMobile: "SOCORRO PARA O MOTOR",
+    ctaDesktop: "SOLICITAR VIA WHATSAPP",
+    waMsg: "PRECISO%20DE%20SOCORRO%20T%C3%89RMICO!%20O%20carro%20superaqueceu.%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  }
+];
+---
+<section class="max-w-7xl mx-auto px-6 md:px-12 pt-8 pb-20 relative z-10">
+    <div class="flex flex-col mb-10">
+        <h2 class="text-3xl font-black uppercase tracking-tight mb-2 text-white">Nossos Serviços</h2>
+        <div class="h-1 w-20 bg-brand-yellow"></div>
+    </div>
+    
+    <!-- Mobile: 1 col | Tablet: 2 col | Desktop: 4 col -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {services.map((s) => (
+            <div class="bg-[#1f1f1f] border-l-4 border-brand-yellow p-6 flex flex-col rounded-r shadow-lg hover:shadow-[0_4px_20px_rgba(237,192,1,0.12)] transition-all h-full">
+                <div class="flex flex-col items-center sm:items-start text-center sm:text-left flex-grow">
+                    <span class="material-symbols-outlined text-[48px] text-brand-yellow mb-4">{s.icon}</span>
+                    <h3 class="text-xl font-bold uppercase mb-2 text-white">{s.title}</h3>
+                    <p class="text-[15px] leading-relaxed text-gray-400 mb-6">{s.desc}</p>
+                </div>
+                <!-- Mobile CTA (red) -->
+                <a href={`${waBase}${s.waMsg}`} target="_blank" rel="noopener noreferrer"
+                   class="md:hidden w-full flex items-center justify-center bg-[#D32732] text-white min-h-[48px] px-3 py-3 text-[12px] font-bold uppercase tracking-wider hover:brightness-110 shadow-md active:scale-95 transition-all rounded-xl text-center mt-auto">
+                    {s.ctaMobile}
+                </a>
+                <!-- Desktop CTA (green/WhatsApp) -->
+                <a href={`${waBase}${s.waMsg}`} target="_blank" rel="noopener noreferrer"
+                   class="hidden md:flex w-full items-center justify-center bg-[#25D366] text-white min-h-[48px] px-3 py-3 text-[13px] font-bold uppercase tracking-wider hover:brightness-110 shadow-md active:scale-95 transition-all rounded-xl text-center mt-auto gap-2">
+                    <span class="material-symbols-outlined text-[18px]">chat</span>
+                    {s.ctaDesktop}
+                </a>
+            </div>
+        ))}
+    </div>
+</section>

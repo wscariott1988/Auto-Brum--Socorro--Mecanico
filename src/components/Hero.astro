@@ -1,0 +1,103 @@
+---
+// src/components/Hero.astro
+const waUrl = "https://wa.me/5551996688568?text=PRECISO%20DE%20SOCORRO%20MEC%C3%82NICO%20URGENTE!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:";
+---
+
+<section class="relative min-h-[100dvh] flex flex-col overflow-hidden px-5 md:px-20">
+
+    <!-- Fundo responsivo com overlay 60% -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-[url('/background.webp')] md:bg-[url('/background.desktop.webp')] bg-cover bg-center bg-fixed"></div>
+        <div class="absolute inset-0 bg-black/90"></div>
+    </div>
+
+    <!-- MOBILE: bloco único centralizado -->
+    <div class="md:hidden relative z-10 flex flex-col items-center justify-center text-center
+                min-h-[100dvh] pb-24 pt-16 px-5 gap-8">
+
+        <!-- Tag Amarela -->
+        <div class="inline-flex items-center bg-brand-yellow text-black px-3 py-2 rounded-full shadow-md w-max max-w-full gap-2">
+            <span class="material-symbols-outlined text-[1.6rem] leading-none flex-shrink-0" style="font-variation-settings: 'FILL' 1, 'wght' 700;">location_on</span>
+            <span class="text-left text-[0.65rem] font-extrabold uppercase tracking-widest leading-snug">
+                Novo Hamburgo, São Leopoldo,<br>Campo Bom e Vale dos Sinos
+            </span>
+        </div>
+
+        <!-- H1 -->
+        <h1 class="text-[1.85rem] font-black uppercase text-white
+                   drop-shadow-xl leading-tight -mt-1">
+            Carro Parado?<br>
+            <span class="text-brand-yellow">Socorro Mecânico</span><br>
+            Rápido na Estrada e Cidade.
+        </h1>
+
+        <!-- Subheadline + prova social juntos -->
+        <div class="flex flex-col items-center gap-4">
+            <p class="text-gray-200 text-[13.5px] font-medium leading-snug max-w-[290px] drop-shadow">
+                Especialistas em pane mecânica, bateria, pane seca e superaquecimento.
+                Mecânica móvel com reparos no local e atendimento a domicílio.
+            </p>
+            <div class="flex items-center gap-2 text-[11px] text-gray-300 font-semibold tracking-wide drop-shadow">
+                <img src="/google-verified.png" alt="Google Verificado" class="h-4 w-auto object-contain" />
+                <span><span class="text-yellow-400">⭐⭐⭐⭐⭐</span> 5.0 no Google (100+ avaliações)</span>
+            </div>
+        </div>
+
+        <!-- Botão LIGAR -->
+        <a href="tel:+5551996688568"
+           class="w-full max-w-[360px] bg-[#D32732] text-white
+                  flex flex-col items-center justify-center py-[15px]
+                  rounded-xl border-2 border-[#ff4a56]
+                  drop-shadow-[0_10px_25px_rgba(211,39,50,0.6)]
+                  animate-pulse-soft active:scale-95 transition-all duration-300">
+            <div class="flex items-center gap-2 text-[19px] font-black uppercase tracking-widest">
+                <span class="material-symbols-outlined text-[26px]" style="font-variation-settings: 'FILL' 1;">call</span>
+                LIGAR AGORA
+            </div>
+            <span class="text-[14px] font-bold opacity-90 mt-0.5">(51) 99668-8568</span>
+        </a>
+
+    </div>
+
+    <!-- ============================================
+         DESKTOP LAYOUT: centralizado max-w-4xl
+         ============================================ -->
+    <div class="hidden md:flex flex-col items-center justify-center text-center
+                min-h-[100dvh] w-full max-w-4xl mx-auto gap-0 relative z-10">
+
+        <span class="inline-block bg-brand-yellow text-black px-4 py-[6px]
+                     text-[0.8rem] font-extrabold uppercase tracking-widest
+                     rounded-full shadow-lg leading-tight w-max max-w-full mb-5">
+            📍 Novo Hamburgo, São Leopoldo, Campo Bom e Vale dos Sinos
+        </span>
+
+        <h1 class="text-5xl font-black uppercase text-white drop-shadow-2xl leading-tight mb-4">
+            Carro Parado? <span class="text-brand-yellow">Socorro Mecânico</span><br>Rápido na Estrada e Cidade.
+        </h1>
+
+        <p class="text-gray-200 text-[17px] font-medium leading-snug max-w-2xl drop-shadow mb-10">
+            Especialistas em pane mecânica, bateria, pane seca e superaquecimento.
+            Mecânica móvel com reparos no local e atendimento a domicílio.
+        </p>
+
+        <!-- Prova Social -->
+        <div class="flex items-center justify-center gap-2 text-[13px] text-gray-300
+                    font-semibold tracking-wide drop-shadow mb-6">
+            <img src="/google-verified.png" alt="Google Verificado" class="h-6 w-auto object-contain" />
+            <span><span class="text-yellow-400">⭐⭐⭐⭐⭐</span> 5.0 no Google (100+ avaliações)</span>
+        </div>
+
+        <!-- CTA Desktop: WhatsApp (sem pulso) -->
+        <a href={waUrl} target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-center gap-3 w-full max-w-[400px]
+                  bg-[#25D366] text-white py-4 rounded-xl font-black uppercase
+                  tracking-widest text-[18px] border-2 border-[#20b558]
+                  shadow-[0_15px_30px_rgba(37,211,102,0.4)]
+                  hover:brightness-110 active:scale-95 transition-all duration-300">
+            <span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+            FALAR NO WHATSAPP
+        </a>
+
+    </div>
+
+</section>

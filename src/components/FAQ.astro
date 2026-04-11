@@ -1,0 +1,38 @@
+---
+// src/components/FAQ.astro
+---
+<section class="max-w-3xl mx-auto px-6 py-16 relative z-10">
+    <h2 class="text-2xl font-black uppercase mb-10 text-center text-white">Dúvidas Frequentes</h2>
+    
+    <div class="space-y-4">
+        <details class="group bg-[#1b1b1b] rounded overflow-hidden">
+            <summary class="flex justify-between items-center p-6 cursor-pointer list-none focus:outline-none">
+                <span class="font-bold uppercase text-sm tracking-widest text-[#e2e2e2]">Quanto tempo demora?</span>
+                <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-brand-yellow" data-icon="expand_more">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-gray-400 text-sm">
+                Nossa média de chegada em áreas urbanas é de 25 a 35 minutos, dependendo do tráfego local.
+            </div>
+        </details>
+        
+        <details class="group bg-[#1b1b1b] rounded overflow-hidden">
+            <summary class="flex justify-between items-center p-6 cursor-pointer list-none focus:outline-none">
+                <span class="font-bold uppercase text-sm tracking-widest text-[#e2e2e2]">Quais formas de pagamento?</span>
+                <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-brand-yellow" data-icon="expand_more">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-gray-400 text-sm">
+                Aceitamos Cartão de Crédito, Débito, PIX e dinheiro diretamente com o técnico no local.
+            </div>
+        </details>
+        
+        <details class="group bg-[#1b1b1b] rounded overflow-hidden">
+            <summary class="flex justify-between items-center p-6 cursor-pointer list-none focus:outline-none">
+                <span class="font-bold uppercase text-sm tracking-widest text-[#e2e2e2]">Atendem em rodovias?</span>
+                <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-brand-yellow" data-icon="expand_more">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-gray-400 text-sm">
+                Sim, prestamos auxílio em todas as principais rodovias estaduais e federais da região metropolitana.
+            </div>
+        </details>
+    </div>
+</section>

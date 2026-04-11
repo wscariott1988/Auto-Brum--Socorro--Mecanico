@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#131313",
+                        "primary-container": "#d32732",
+                        "on-background": "#e2e2e2",
+                        "on-tertiary-container": "#dff5ff",
+                        "surface-container-low": "#1b1b1b",
+                        "on-primary": "#68000d",
+                        "secondary": "#ffdd75",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#930017",
+                        "tertiary": "#7cd2f0",
+                        "tertiary-fixed-dim": "#7cd2f0",
+                        "error-container": "#93000a",
+                        "secondary-container": "#ecbf00",
+                        "surface-bright": "#393939",
+                        "surface-container-highest": "#353535",
+                        "on-secondary": "#3c2f00",
+                        "on-primary-fixed": "#410005",
+                        "surface-tint": "#ffb3af",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-surface": "#e2e2e2",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-container-high": "#2a2a2a",
+                        "on-surface-variant": "#e4bdbb",
+                        "on-tertiary": "#003543",
+                        "primary": "#ffb3af",
+                        "on-secondary-container": "#624e00",
+                        "secondary-fixed-dim": "#efc205",
+                        "on-tertiary-fixed": "#001f28",
+                        "on-tertiary-fixed-variant": "#004e60",
+                        "primary-fixed": "#ffdad7",
+                        "primary-fixed-dim": "#ffb3af",
+                        "surface-dim": "#131313",
+                        "tertiary-container": "#007893",
+                        "outline-variant": "#5b403e",
+                        "inverse-on-surface": "#303030",
+                        "tertiary-fixed": "#b6ebff",
+                        "on-primary-container": "#ffeeec",
+                        "on-secondary-fixed": "#231b00",
+                        "secondary-fixed": "#ffe085",
+                        "background": "#131313",
+                        "surface-variant": "#353535",
+                        "outline": "#ab8886",
+                        "surface-container": "#1f1f1f",
+                        "on-error": "#690005",
+                        "inverse-primary": "#bc1125"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            background-color: #000000;
+            color: #e2e2e2;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .text-display-lg {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            font-weight: 800;
+        }
+
+        .industrial-gradient {
+            background: linear-gradient(135deg, #ffb3af 0%, #d32732 100%);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="pb-24">
+    <!-- TopAppBar -->
+    <header
+        class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-[#131313]/80 backdrop-blur-xl flex justify-between items-center px-4 h-16 w-full">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[#D32732]" data-icon="fmd_bad">fmd_bad</span>
+            <span
+                class="text-xl font-black text-on-surface dark:text-[#E2E2E2] font-['Inter'] uppercase tracking-widest">SOCORRO
+                24H</span>
+        </div>
+        <button
+            class="bg-primary-container text-on-primary-container px-4 py-2 text-xs font-bold uppercase tracking-widest hover:bg-[#2A2A2A] transition-colors active:scale-95 duration-100">
+            LIGAR AGORA
+        </button>
+    </header>
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-16 px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-40">
+            <img class="w-full h-full object-cover"
+                data-alt="cinematic close up of a mechanic working on a high-performance engine in a dark moody garage with dramatic red backlighting"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzjr2Pr9lmtIc8y8WJgkgtwFSiAeUJY1ZAKBvQcyaoYd99hic_2yktilCH-S3wuZF6-Ho6StXjayMn8d6NYIcBDKsBPCvwt80c-FULjVntF997rhluzzDTwdv3OC6a7UlmY-onCDjufd92adKLRuJe8tjYNXqEPfC8T3ZgsCR36iGKuZGvbSr9Z-F-XNLHuLmM77i44jew1kU8ec9b-SZ5fS4wObsLHTcFy2JjDyw98TtXqDIVVCjeYoTmFN7WQatzK9f5RmQ62atr" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+        </div>
+        <div class="relative z-10 max-w-xl">
+            <span
+                class="inline-block bg-secondary-container text-on-secondary-container px-3 py-1 text-[0.75rem] font-bold uppercase tracking-[0.05em] mb-6">
+                EMERGÊNCIA MECÂNICA
+            </span>
+            <h1 class="text-display-lg uppercase mb-6">
+                Socorro Mecânico Ágil: Chegamos em até <span class="text-secondary">30 min</span>.
+            </h1>
+            <p class="text-on-surface-variant text-lg mb-10 leading-relaxed max-w-md">
+                Pane elétrica, superaquecimento ou bateria descarregada? Nossa equipe tática está pronta para te tirar
+                do prego agora mesmo.
+            </p>
+            <button
+                class="w-full industrial-gradient text-on-primary-container h-16 flex items-center justify-center gap-4 text-lg font-bold uppercase tracking-widest shadow-2xl active:scale-95 transition-transform">
+                <span class="material-symbols-outlined" data-icon="call" data-weight="fill"
+                    style="font-variation-settings: 'FILL' 1;">call</span>
+                [CHAMAR SOCORRO AGORA]
+            </button>
+        </div>
+    </section>
+    <!-- Trust & Speed Bar -->
+    <section class="bg-surface-container-low py-4 px-6 flex flex-wrap justify-between items-center gap-4">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary" data-icon="star" data-weight="fill"
+                style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="label-md uppercase tracking-[0.05em] font-bold text-xs">4.9 no Google</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary" data-icon="verified_user">verified_user</span>
+            <span class="label-md uppercase tracking-[0.05em] font-bold text-xs">Mecânicos Certificados</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary" data-icon="schedule">schedule</span>
+            <span class="label-md uppercase tracking-[0.05em] font-bold text-xs">Atendimento 24h</span>
+        </div>
+    </section>
+    <!-- Service Cards Grid -->
+    <section class="px-6 py-16">
+        <div class="flex flex-col mb-12">
+            <h2 class="text-3xl font-black uppercase tracking-tight mb-2">Serviços Táticos</h2>
+            <div class="h-1 w-20 bg-secondary-container"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Card 1 -->
+            <div
+                class="bg-surface-container-high border-l-4 border-secondary-container p-6 flex flex-col justify-between h-48 relative overflow-hidden group">
+                <span
+                    class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl opacity-10 group-hover:scale-110 transition-transform"
+                    data-icon="settings">settings</span>
+                <div>
+                    <h3 class="text-xl font-bold uppercase mb-2">Mecânica Geral</h3>
+                    <p class="text-sm text-on-surface-variant">Diagnóstico e reparo rápido no local.</p>
+                </div>
+                <button
+                    class="self-start text-secondary border border-secondary/30 px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-secondary hover:text-black transition-colors">Solicitar</button>
+            </div>
+            <!-- Card 2 -->
+            <div
+                class="bg-surface-container-high border-l-4 border-secondary-container p-6 flex flex-col justify-between h-48 relative overflow-hidden group">
+                <span
+                    class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl opacity-10 group-hover:scale-110 transition-transform"
+                    data-icon="battery_charging_full">battery_charging_full</span>
+                <div>
+                    <h3 class="text-xl font-bold uppercase mb-2">Troca de Bateria</h3>
+                    <p class="text-sm text-on-surface-variant">Substituição imediata com garantia.</p>
+                </div>
+                <button
+                    class="self-start text-secondary border border-secondary/30 px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-secondary hover:text-black transition-colors">Solicitar</button>
+            </div>
+            <!-- Card 3 -->
+            <div
+                class="bg-surface-container-high border-l-4 border-secondary-container p-6 flex flex-col justify-between h-48 relative overflow-hidden group">
+                <span
+                    class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl opacity-10 group-hover:scale-110 transition-transform"
+                    data-icon="local_gas_station">local_gas_station</span>
+                <div>
+                    <h3 class="text-xl font-bold uppercase mb-2">Pane Seca</h3>
+                    <p class="text-sm text-on-surface-variant">Reabastecimento de emergência onde estiver.</p>
+                </div>
+                <button
+                    class="self-start text-secondary border border-secondary/30 px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-secondary hover:text-black transition-colors">Solicitar</button>
+            </div>
+            <!-- Card 4 -->
+            <div
+                class="bg-surface-container-high border-l-4 border-secondary-container p-6 flex flex-col justify-between h-48 relative overflow-hidden group">
+                <span
+                    class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl opacity-10 group-hover:scale-110 transition-transform"
+                    data-icon="device_thermostat">device_thermostat</span>
+                <div>
+                    <h3 class="text-xl font-bold uppercase mb-2">Superaquecimento</h3>
+                    <p class="text-sm text-on-surface-variant">Resfriamento e reparo de sistema térmico.</p>
+                </div>
+                <button
+                    class="self-start text-secondary border border-secondary/30 px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-secondary hover:text-black transition-colors">Solicitar</button>
+            </div>
+        </div>
+    </section>
+    <!-- Social Proof -->
+    <section class="bg-surface-container-lowest py-16 px-6">
+        <h2 class="text-2xl font-black uppercase text-center mb-12">Quem já precisou, aprovou</h2>
+        <div class="space-y-6">
+            <div class="bg-surface-container-high p-6 rounded-lg">
+                <div class="flex text-secondary mb-4">
+                    <span class="material-symbols-outlined" data-icon="star" data-weight="fill"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" data-icon="star" data-weight="fill"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" data-icon="star" data-weight="fill"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" data-icon="star" data-weight="fill"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" data-icon="star" data-weight="fill"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <p class="text-on-surface mb-4">"Meu carro parou na Marginal Tietê às 3 da manhã. Chegaram em 20 minutos
+                    e resolveram a pane elétrica na hora. Fantástico!"</p>
+                <div class="flex items-center gap-3">
+                    <img class="w-10 h-10 rounded-full object-cover grayscale"
+                        data-alt="portrait of a middle aged man with a confident smile against a neutral urban background"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtPezezw0Zx_6Gsdd2FIx7pMZ1enFKA0FQaHI62If8xpD7XGPc48_Iz2ZHdrVwoaziviHhBHyTQALwnBuAjYGY-A1pUEH8dgqnJcsbiUQ6uy68_OXds_6257-4Q8gtnUVzlNBB7YUQgrZ8IPu6PT8rj7GAXEYKlb_9XXiKfyMXU0oyFfqZ_-cWGPwtAWF-_kZTfLV__qq5TuVbnWfHLTBPwQlf1lRC-GDZojySeGjGUtncaiEP9D5MJFGxGn8PwguMmXTop4VK4pvp" />
+                    <span class="text-xs font-bold uppercase tracking-widest">Ricardo M.</span>
+                </div>
+            </div>
+            <div class="bg-surface-container-high p-6 rounded-lg">
+                <div class="flex text-secondary mb-4">
+                    <span class="material-symbols-outlined" data-icon="star" data-weight="fill"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" data-icon="star" data-weight="fill"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" data-icon="star" data-weight="fill"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" data-icon="star" data-weight="fill"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" data-icon="star" data-weight="fill"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <p class="text-on-surface mb-4">"Bateria morreu no estacionamento do shopping. O atendimento via chat
+                    foi super rápido e o preço foi justo."</p>
+                <div class="flex items-center gap-3">
+                    <img class="w-10 h-10 rounded-full object-cover grayscale"
+                        data-alt="portrait of a young woman with professional attire smiling warmly"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJHAdCZC-mNdViTLBnirZMRrNDKFBB4o56dOGhFI5oQ-nFQCoqyZjWOYBujboB9xqZNjD8Qu06xQFsZQMprbKiYRzd4no6B_wxYSBuWHMVY0aSit-XyqRdWjF3FYbjLHvmz9VxnmLQLqAEBPxsqZ_2fIjs9h9X6TyEPMo_fsBcI60FHsm42q5mMxgvOxLPnlgL4IwtRxAG0r-O3_577mvrs-QtsRgTaRlOjA-fh3XMErArQlNGXwHg1Sgr8hNJGBCTmKZCd-ivM7Kx" />
+                    <span class="text-xs font-bold uppercase tracking-widest">Carla S.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section class="px-6 py-16">
+        <h2 class="text-2xl font-black uppercase mb-10 text-center">Dúvidas Frequentes</h2>
+        <div class="space-y-4">
+            <details class="group bg-surface-container-low">
+                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                    <span class="font-bold uppercase text-sm tracking-widest">Quanto tempo demora?</span>
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform"
+                        data-icon="expand_more">expand_more</span>
+                </summary>
+                <div class="px-6 pb-6 text-on-surface-variant text-sm">
+                    Nossa média de chegada em áreas urbanas é de 25 a 35 minutos, dependendo do tráfego local.
+                </div>
+            </details>
+            <details class="group bg-surface-container-low">
+                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                    <span class="font-bold uppercase text-sm tracking-widest">Quais formas de pagamento?</span>
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform"
+                        data-icon="expand_more">expand_more</span>
+                </summary>
+                <div class="px-6 pb-6 text-on-surface-variant text-sm">
+                    Aceitamos Cartão de Crédito, Débito, PIX e dinheiro diretamente com o técnico no local.
+                </div>
+            </details>
+            <details class="group bg-surface-container-low">
+                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                    <span class="font-bold uppercase text-sm tracking-widest">Atendem em rodovias?</span>
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform"
+                        data-icon="expand_more">expand_more</span>
+                </summary>
+                <div class="px-6 pb-6 text-on-surface-variant text-sm">
+                    Sim, prestamos auxílio em todas as principais rodovias estaduais e federais da região metropolitana.
+                </div>
+            </details>
+        </div>
+    </section>
+    <!-- BottomNavBar -->
+    <nav
+        class="fixed bottom-0 left-0 w-full z-50 flex border-t-4 border-[#D32732] shadow-[0_-8px_24px_rgba(0,0,0,0.5)]">
+        <a class="flex flex-1 items-center justify-center bg-[#D32732] text-white h-16 active:opacity-90"
+            href="tel:+55000000000">
+            <span class="material-symbols-outlined" data-icon="call">call</span>
+        </a>
+        <a class="flex flex-1 items-center justify-center bg-[#1B1B1B] text-[#ECBF00] h-16 active:opacity-90" href="#">
+            <span class="material-symbols-outlined" data-icon="chat">chat</span>
+        </a>
+    </nav>
+</body>
+
+</html>

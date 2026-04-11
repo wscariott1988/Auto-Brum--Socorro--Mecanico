@@ -1,0 +1,95 @@
+---
+// src/components/Testimonials.astro
+
+const reviews = [
+  {
+    name: "Alice Prado",
+    text: "Simplesmente ele apareceu na frente do meu carro e solucionou meu problema na hora ótimo profissional!!!!"
+  },
+  {
+    name: "Adriane Cauduro",
+    text: "Atendimento muito bom, descobriu logo o problema do carro, e depois do problema consertado não deu nenhum imprevisto! Agradecemos muito pela ajuda e recomendamos o serviço."
+  },
+  {
+    name: "Deise Ferreira",
+    text: "Os guris sao top,atendimento diferenciado eles tem compromisso com os clientes,agilidade ,com certeza vou indicar ! Parabéns pelo ótimo trabalho!"
+  },
+  {
+    name: "Micael Santos",
+    text: "ATENDIMENTO HONESTO E RAPIDA SOLUÇÃO COM SEGURANÇA E TRANSPARENCIA"
+  },
+  {
+    "name": "João (Tinguinho)",
+    "text": "Seriedade, compromisso, eficiencia e sobre todo bom preço ,más que uma mecânica um amigo , meus parabens por o serviço do Rodrigo 100% confiavel."
+  },
+  {
+    "name": "Rafael Neves",
+    "text": "Ótimo profissional Rodrigo nos socorreu foi certeiro no problema que estava ocorrendo"
+  },
+  {
+    "name": "Daiane Schneider",
+    "text": "Fui bem atendida, meu carro parou na freeway e já estava horas aguardando guincho e eles nos socorreram e seguimos viagem tranquilamente ."
+  },
+  {
+    "name": "Iza",
+    "text": "Ótimo atendimento, equipe de confiança"
+  },
+  {
+    "name": "Gabriel Farias",
+    "text": "Excelente profissional,atencioso e prestativo"
+  }
+];
+
+// Sort reviews so longest comes first
+reviews.sort((a, b) => b.text.length - a.text.length);
+---
+<section class="bg-[#0e0e0e] py-16 relative z-10 border-y border-white/5 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 mb-12 flex flex-col items-center">
+        <h2 class="text-2xl font-black uppercase text-center text-white mb-4">Depoimentos Reais</h2>
+        <div class="flex items-center gap-2 bg-white/5 py-1.5 px-4 rounded-full border border-white/10">
+            <img src="/google-verified.png" alt="Google Verified" class="h-6 w-auto object-contain" />
+            <span class="text-sm font-bold text-white tracking-widest">⭐⭐⭐⭐⭐ 5.0</span>
+        </div>
+    </div>
+
+    <!-- Carousel Container -->
+    <div class="flex overflow-hidden group gap-6 select-none pl-6 md:pl-0">
+        <!-- Scroll Track 1 -->
+        <div class="flex flex-shrink-0 animate-marquee group-hover:[animation-play-state:paused] gap-6 min-w-full">
+            {reviews.map((review) => (
+                <div class="bg-[#1b1b1b] border border-brand-yellow p-6 rounded shadow-xl flex flex-col w-[300px] md:w-[350px] flex-shrink-0 whitespace-normal">
+                    <div class="flex text-white mb-4 text-sm gap-1">
+                        <span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="text-[#e2e2e2] mb-6 italic leading-relaxed flex-1">"{review.text}"</p>
+                    <div class="flex items-center mt-auto border-t border-white/10 pt-4">
+                        <span class="text-sm font-bold uppercase tracking-widest text-brand-yellow">{review.name}</span>
+                    </div>
+                </div>
+            ))}
+        </div>
+        
+        <!-- Scroll Track 2 (Clone for infinite loop) -->
+        <div class="flex flex-shrink-0 animate-marquee group-hover:[animation-play-state:paused] gap-6 min-w-full" aria-hidden="true">
+            {reviews.map((review) => (
+                <div class="bg-[#1b1b1b] border border-brand-yellow p-6 rounded shadow-xl flex flex-col w-[300px] md:w-[350px] flex-shrink-0 whitespace-normal">
+                    <div class="flex text-white mb-4 text-sm gap-1">
+                        <span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="text-[#e2e2e2] mb-6 italic leading-relaxed flex-1">"{review.text}"</p>
+                    <div class="flex items-center mt-auto border-t border-white/10 pt-4">
+                        <span class="text-sm font-bold uppercase tracking-widest text-brand-yellow">{review.name}</span>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
