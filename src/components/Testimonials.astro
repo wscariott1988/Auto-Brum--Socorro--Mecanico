@@ -53,11 +53,15 @@ reviews.sort((a, b) => b.text.length - a.text.length);
     </div>
 
     <!-- Carousel Container -->
-    <div class="flex overflow-hidden group gap-6 select-none pl-6 md:pl-0">
-        <!-- Scroll Track 1 -->
-        <div class="flex flex-shrink-0 animate-marquee group-hover:[animation-play-state:paused] active:[animation-play-state:paused] gap-6 min-w-full">
+    <div 
+        id="testimonial-carousel"
+        class="flex overflow-x-auto gap-6 select-none pl-6 md:pl-0 cursor-grab active:cursor-grabbing no-scrollbar"
+        style="scrollbar-width: none; -ms-overflow-style: none;"
+    >
+        <!-- Scroll Track -->
+        <div id="testimonial-track" class="flex flex-shrink-0 gap-6">
             {reviews.map((review) => (
-                <div class="bg-[#1b1b1b] border border-brand-yellow p-6 rounded shadow-xl flex flex-col w-[300px] md:w-[350px] flex-shrink-0 whitespace-normal">
+                <div class="bg-[#1b1b1b] border border-brand-yellow p-6 rounded shadow-xl flex flex-col w-[300px] md:w-[350px] flex-shrink-0 whitespace-normal snap-center">
                     <div class="flex text-white mb-4 text-sm gap-1">
                         <span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
                         <span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -71,12 +75,10 @@ reviews.sort((a, b) => b.text.length - a.text.length);
                     </div>
                 </div>
             ))}
-        </div>
-        
-        <!-- Scroll Track 2 (Clone for infinite loop) -->
-        <div class="flex flex-shrink-0 animate-marquee group-hover:[animation-play-state:paused] active:[animation-play-state:paused] gap-6 min-w-full" aria-hidden="true">
+            
+            <!-- Clone for infinite loop -->
             {reviews.map((review) => (
-                <div class="bg-[#1b1b1b] border border-brand-yellow p-6 rounded shadow-xl flex flex-col w-[300px] md:w-[350px] flex-shrink-0 whitespace-normal">
+                <div class="bg-[#1b1b1b] border border-brand-yellow p-6 rounded shadow-xl flex flex-col w-[300px] md:w-[350px] flex-shrink-0 whitespace-normal snap-center" aria-hidden="true">
                     <div class="flex text-white mb-4 text-sm gap-1">
                         <span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
                         <span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -93,3 +95,51 @@ reviews.sort((a, b) => b.text.length - a.text.length);
         </div>
     </div>
 </section>
+
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+</style>
+
+<script>
+    const carousel = document.getElementById('testimonial-carousel');
+    const track = document.getElementById('testimonial-track');
+    let isInteracting = false;
+    let scrollSpeed = 1; // Ajuste para velocidade desejada
+    let lastTime = 0;
+
+    function step(timestamp) {
+        if (!carousel || !track) return;
+        
+        if (!isInteracting) {
+            carousel.scrollLeft += scrollSpeed;
+            
+            // Loop infinito: se passou da metade (fim do primeiro conjunto), volta pro início
+            const halfWidth = track.scrollWidth / 2;
+            if (carousel.scrollLeft >= halfWidth) {
+                carousel.scrollLeft -= halfWidth;
+            }
+        }
+        requestAnimationFrame(step);
+    }
+
+    // Inicia o auto-scroll
+    requestAnimationFrame(step);
+
+    // Gestão de interatividade
+    const startInteracting = () => { isInteracting = true; };
+    const stopInteracting = () => { 
+        // Pequeno delay para retomar após soltar
+        setTimeout(() => { isInteracting = false; }, 2000); 
+    };
+
+    carousel.addEventListener('mousedown', startInteracting);
+    carousel.addEventListener('touchstart', startInteracting, { passive: true });
+    
+    window.addEventListener('mouseup', stopInteracting);
+    window.addEventListener('touchend', stopInteracting);
+
+    // Prevenir bugs de arrasto no desktop
+    carousel.addEventListener('mouseleave', () => { if(isInteracting) stopInteracting(); });
+</script>
