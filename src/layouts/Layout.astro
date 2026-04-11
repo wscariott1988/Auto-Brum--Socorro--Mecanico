@@ -13,8 +13,10 @@ const waUrl = "https://wa.me/5551996688568?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
 <!doctype html>
 <html lang="pt-br" class="dark scroll-smooth">
 <head>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Socorro Mecânico 24h especializado e rápido. Chegamos em 30 minutos na Grande Porto Alegre e Vale dos Sinos." />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -34,12 +36,16 @@ const waUrl = "https://wa.me/5551996688568?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet" />
+
+    <!-- Performance: Preload LCP Background Image -->
+    <link rel="preload" as="image" href="/background.webp" media="(max-width: 767px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/background.desktop.webp" media="(min-width: 768px)" fetchpriority="high" />
 </head>
 <body class="bg-black text-on-surface font-body antialiased selection:bg-brand-red selection:text-white">
 
-    <!-- Header: Mobile = nome centrado | Desktop = nome + telefone -->
-    <header class="absolute top-0 w-full z-[100] bg-black/80 backdrop-blur-[8px] flex justify-center md:justify-between items-center px-6 h-12 md:h-20 border-b border-white/5">
+    <!-- Header: Otimizado sem backdrop-blur para CPU mobile -->
+    <header class="absolute top-0 w-full z-[100] bg-black flex justify-center md:justify-between items-center px-6 h-12 md:h-20 border-b border-white/5">
         <!-- Logo / Nome -->
         <span class="text-xl md:text-2xl font-black text-white tracking-tight uppercase after:content-[''] after:block after:w-[40%] after:h-[2px] after:bg-brand-yellow after:mx-auto md:after:mx-0 after:mt-1 whitespace-nowrap drop-shadow-md">Mecânica Auto Brum</span>
         <!-- Telefone - apenas Desktop -->
@@ -63,7 +69,7 @@ const waUrl = "https://wa.me/5551996688568?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
     <nav class="fixed bottom-4 left-4 right-4 z-[120] flex md:hidden">
         <a href={waUrl} target="_blank" rel="noopener noreferrer"
            class="w-full flex items-center justify-center gap-3
-                  bg-[#25D366]/90 backdrop-blur-sm text-white
+                  bg-[#25D366] text-white
                   h-14 rounded-2xl border border-[#20b558]/60
                   font-black uppercase tracking-widest text-[15px]
                   shadow-[0_10px_30px_rgba(37,211,102,0.35)]

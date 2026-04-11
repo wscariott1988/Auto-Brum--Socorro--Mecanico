@@ -5,9 +5,19 @@ const waUrl = "https://wa.me/5551996688568?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
 
 <section class="relative min-h-[100dvh] flex flex-col overflow-hidden px-5 md:px-20">
 
-    <!-- Fundo responsivo com overlay 60% -->
-    <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-[url('/background.webp')] md:bg-[url('/background.desktop.webp')] bg-cover bg-center bg-fixed"></div>
+    <!-- Fundo otimizado para LCP (Maior Pintura com Conteúdo) -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+        <picture>
+            <source srcset="/background.desktop.webp" media="(min-width: 768px)" />
+            <img 
+                src="/background.webp" 
+                alt="" 
+                class="absolute inset-0 w-full h-full object-cover object-center"
+                fetchpriority="high"
+                loading="eager"
+                decoding="async"
+            />
+        </picture>
         <div class="absolute inset-0 bg-black/90"></div>
     </div>
 
@@ -38,7 +48,7 @@ const waUrl = "https://wa.me/5551996688568?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
                 Mecânica móvel com reparos no local e atendimento a domicílio.
             </p>
             <div class="flex items-center gap-2 text-[11px] text-gray-300 font-semibold tracking-wide drop-shadow">
-                <img src="/google-verified.png" alt="Google Verificado" class="h-4 w-auto object-contain" />
+                <img src="/google-verified.webp" alt="Google Verificado" class="h-4 w-auto object-contain" width="80" height="16" loading="eager" />
                 <span><span class="text-yellow-400">⭐⭐⭐⭐⭐</span> 5.0 no Google (100+ avaliações)</span>
             </div>
         </div>
@@ -83,7 +93,7 @@ const waUrl = "https://wa.me/5551996688568?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
         <!-- Prova Social -->
         <div class="flex items-center justify-center gap-2 text-[13px] text-gray-300
                     font-semibold tracking-wide drop-shadow mb-6">
-            <img src="/google-verified.png" alt="Google Verificado" class="h-6 w-auto object-contain" />
+            <img src="/google-verified.webp" alt="Google Verificado" class="h-6 w-auto object-contain" width="120" height="24" loading="eager" />
             <span><span class="text-yellow-400">⭐⭐⭐⭐⭐</span> 5.0 no Google (100+ avaliações)</span>
         </div>
 
