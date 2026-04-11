@@ -56,11 +56,13 @@ const services = [
                 </div>
                 <!-- Mobile CTA (red) -->
                 <a href={`${waBase}${s.waMsg}`} target="_blank" rel="noopener noreferrer"
+                   onclick={`return gtag_report_conversion('${waBase}${s.waMsg}')`}
                    class="md:hidden w-full flex items-center justify-center bg-[#D32732] text-white min-h-[48px] px-3 py-3 text-[12px] font-bold uppercase tracking-wider hover:brightness-110 shadow-md active:scale-95 transition-all rounded-xl text-center mt-auto">
                     {s.ctaMobile}
                 </a>
                 <!-- Desktop CTA (green/WhatsApp) -->
                 <a href={`${waBase}${s.waMsg}`} target="_blank" rel="noopener noreferrer"
+                   onclick={`return gtag_report_conversion('${waBase}${s.waMsg}')`}
                    class="hidden md:flex w-full items-center justify-center bg-[#25D366] text-white min-h-[48px] px-3 py-3 text-[13px] font-bold uppercase tracking-wider hover:brightness-110 shadow-md active:scale-95 transition-all rounded-xl text-center mt-auto gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.957-1.396C8.36 21.493 10.106 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.74 0-3.327-.47-4.686-1.28l-.337-.202-2.935.827.842-2.868-.222-.352C3.84 14.802 3.32 13.435 3.32 12c0-4.787 3.893-8.68 8.68-8.68 4.787 0 8.68 3.893 8.68 8.68S16.787 20 12 20zm4.84-5.368c-.266-.134-1.574-.776-1.818-.865-.243-.09-.42-.134-.597.134-.176.268-.685.865-.84 1.044-.154.178-.309.201-.575.067-.266-.134-1.124-.413-2.14-1.319-.79-.705-1.325-1.576-1.48-1.844-.155-.268-.016-.413.118-.546.12-.12.266-.312.4-.468.133-.156.177-.268.266-.446.088-.178.044-.334-.022-.468-.066-.134-.597-1.442-.818-1.977-.215-.522-.43-.45-.597-.458h-.508c-.176 0-.465.067-.708.334-.243.268-.93.914-.93 2.23 0 1.316.953 2.585 1.085 2.764.133.179 1.876 2.855 4.545 4.005.635.273 1.13.437 1.516.56.638.203 1.22.174 1.678.106.51-.076 1.574-.643 1.796-1.265.223-.623.223-1.159.155-1.265-.067-.107-.243-.178-.508-.312z"/></svg>
                     {s.ctaDesktop}

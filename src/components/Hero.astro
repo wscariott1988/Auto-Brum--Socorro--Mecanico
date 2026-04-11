@@ -99,6 +99,7 @@ const waUrl = "https://wa.me/5551996688568?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
 
         <!-- CTA Desktop: WhatsApp (sem pulso) -->
         <a href={waUrl} target="_blank" rel="noopener noreferrer"
+           onclick={`return gtag_report_conversion('${waUrl}')`}
            class="flex items-center justify-center gap-3 w-full max-w-[400px]
                   bg-[#25D366] text-white py-4 rounded-xl font-black uppercase
                   tracking-widest text-[18px] border-2 border-[#20b558]
