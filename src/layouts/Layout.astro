@@ -29,19 +29,24 @@ const waUrl = "https://wa.me/5551996688568?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
       gtag('js', new Date());
 
       gtag('config', 'AW-18084251132');
+
+      // Snippet de conversão de ligações
+      gtag('config', 'AW-18084251132/NBsMCNT18JocEPyLn69D', {
+        'phone_conversion_number': '51996688568'
+      });
     </script>
 
     <!-- Global conversion tracking script -->
     <script is:inline>
-    function gtag_report_conversion(url) {
-      console.log('gtag_report_conversion called with url:', url);
+    function gtag_report_conversion(url, sendTo = 'AW-18084251132/eVa5CN3BwpocEI-0v65D') {
+      console.log('gtag_report_conversion called with url:', url, 'send_to:', sendTo);
       var callback = function () {
         if (typeof(url) != 'undefined') {
           window.location = url;
         }
       };
       gtag('event', 'conversion', {
-          'send_to': 'AW-18084251132/eVa5CN3BwpocEI-0v65D',
+          'send_to': sendTo,
           'value': 1.0,
           'currency': 'BRL',
           'event_callback': callback
