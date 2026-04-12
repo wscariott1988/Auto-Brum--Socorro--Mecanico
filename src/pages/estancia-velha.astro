@@ -1,0 +1,65 @@
+---
+// src/pages/estancia-velha.astro
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import TrustBar from '../components/TrustBar.astro';
+import Services from '../components/Services.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+
+const city = "Estância Velha";
+const introText = "Socorro mecânico em Estância Velha 24h. Especialistas em mecânica móvel com atendimento na RS-239, BR-116 e bairros como Encosta do Sol, Bela Vista e Centro. Resgate rápido e eficiente.";
+
+const localizedServices = [
+  {
+    icon: "handyman",
+    title: "Mecânico Estância Velha",
+    desc: "Socorro especializado 24h em toda a Estância Velha e RS-239.",
+    ctaMobile: "SOCORRO EM ESTÂNCIA VELHA",
+    ctaDesktop: "FALAR COM MECÂNICO EV",
+    waMsg: "PRECISO%20DE%20SOCORRO%20MEC%C3%82NICO%20EM%20EST%C3%82NCIA%20VELHA!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  },
+  {
+    icon: "electric_bolt",
+    title: "Bateria 24h EV",
+    desc: "Troca e carga de bateria com agilidade em Estância Velha.",
+    ctaMobile: "SOLICITAR BATERIA AGORA",
+    ctaDesktop: "WHATSAPP BATERIA EV",
+    waMsg: "PRECISO%20DE%20BATERIA%20EM%20EST%C3%82NCIA%20VELHA!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  },
+  {
+    icon: "local_gas_station",
+    title: "Pane Seca RS-239",
+    desc: "Socorro urgente com combustível em Estância Velha e arredores.",
+    ctaMobile: "SOCORRO PANE SECA",
+    ctaDesktop: "WHATSAPP PANE SECA EV",
+    waMsg: "ESTOU%20COM%20PANE%20SECA%20EM%20EST%C3%82NCIA%20VELHA!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  },
+  {
+    icon: "device_thermostat",
+    title: "Superaquecimento",
+    desc: "Atendimento mecânico rápido para motores fervendo em EV.",
+    ctaMobile: "SOCORRO MOTOR EV",
+    ctaDesktop: "FALAR COM TÉCNICO",
+    waMsg: "O%20MOTOR%20FERVEU%20EM%20EST%C3%82NCIA%20VELHA!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  }
+];
+---
+
+<Layout 
+    title="Rodrigo Auto Blum | Socorro Mecânico Estância Velha 24h"
+    description={`Precisa de mecânico em ${city}? Atendimento 24h na RS-239, BR-116 e bairros. Socorro para bateria e pane mecânica com chegada em 30 min.`}
+    ogTitle={`Mecânica 24h em ${city} | Rodrigo Auto Blum`}
+    ogDescription={`Socorro mecânico rápido em ${city}. Atendimento na RS-239 e bairros como Bela Vista e Encosta do Sol. Reparamos no local.`}
+>
+	<Hero 
+        cityTag={city} 
+        titleLine1="Mecânico em Estância?"
+        titleLine2="Socorro Rápido 24h na RS-239."
+        introText={introText}
+    />
+	<TrustBar city={city} />
+	<Services customServices={localizedServices} />
+    <Testimonials />
+    <FAQ city={city} />
+</Layout>

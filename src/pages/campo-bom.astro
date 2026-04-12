@@ -1,0 +1,65 @@
+---
+// src/pages/campo-bom.astro
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import TrustBar from '../components/TrustBar.astro';
+import Services from '../components/Services.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+
+const city = "Campo Bom";
+const introText = "Atendimento ágil em Campo Bom. Socorro mecânico 24h na RS-239 e em todos os bairros, como Quatro Colônias, Imigrante e proximidades do Largo Irmãos Vetter. Reparos no local e mecânica móvel.";
+
+const localizedServices = [
+  {
+    icon: "handyman",
+    title: "Mecânico Campo Bom",
+    desc: "Socorro mecânico rápido na RS-239 e bairros de Campo Bom.",
+    ctaMobile: "SOCORRO EM CAMPO BOM",
+    ctaDesktop: "FALAR COM MECÂNICO CB",
+    waMsg: "PRECISO%20DE%20SOCORRO%20MEC%C3%82NICO%20EM%20CAMPO%20BOM!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  },
+  {
+    icon: "electric_bolt",
+    title: "Bateria 24h CB",
+    desc: "Troca e carga de bateria com agilidade em toda a cidade.",
+    ctaMobile: "SOLICITAR BATERIA AGORA",
+    ctaDesktop: "WHATSAPP BATERIA CB",
+    waMsg: "PRECISO%20DE%20BATERIA%20EM%20CAMPO%20BOM!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  },
+  {
+    icon: "local_gas_station",
+    title: "Pane Seca CB",
+    desc: "Combustível na medida certa para você não ficar parado em Campo Bom.",
+    ctaMobile: "SOLICITAR COMBUSTÍVEL",
+    ctaDesktop: "WHATSAPP PANE SECA CB",
+    waMsg: "ESTOU%20COM%20PANE%20SECA%20EM%20CAMPO%20BOM!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  },
+  {
+    icon: "device_thermostat",
+    title: "Superaquecimento",
+    desc: "Resgate mecânico para problemas de temperatura no motor.",
+    ctaMobile: "SOCORRO TÉRMICO CB",
+    ctaDesktop: "FALAR COM TÉCNICO",
+    waMsg: "O%20MOTOR%20FERVEU%20EM%20CAMPO%20BOM!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  }
+];
+---
+
+<Layout 
+    title="Rodrigo Auto Blum | Socorro Mecânico Campo Bom 24h"
+    description={`Socorro mecânico 24h em ${city}. Atendimento rápido na RS-239 e bairros. Chegamos em 30 min para bateria, pane seca e socorro mecânico.`}
+    ogTitle={`Mecânica 24h em ${city} | Rodrigo Auto Blum`}
+    ogDescription={`Precisa de mecânico em ${city}? Atendimento urgente na RS-239 e bairros como Centro e Quatro Colônias.`}
+>
+	<Hero 
+        cityTag={city} 
+        titleLine1="Socorro em Campo Bom?"
+        titleLine2="Atendimento 24h Rápido na RS-239."
+        introText={introText}
+    />
+	<TrustBar city={city} />
+	<Services customServices={localizedServices} />
+    <Testimonials />
+    <FAQ city={city} />
+</Layout>

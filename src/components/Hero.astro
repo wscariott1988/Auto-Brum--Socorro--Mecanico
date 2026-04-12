@@ -1,5 +1,18 @@
 ---
-// src/components/Hero.astro
+interface Props {
+    cityTag?: string;
+    titleLine1?: string;
+    titleLine2?: string;
+    introText?: string;
+}
+
+const {
+    cityTag = "Novo Hamburgo, São Leopoldo,<br>Campo Bom e Vale dos Sinos",
+    titleLine1 = "Carro Parado?",
+    titleLine2 = "Rápido na Estrada e Cidade.",
+    introText = "Especialistas em pane mecânica, bateria, pane seca e superaquecimento. Mecânica móvel com reparos no local e atendimento a domicílio."
+} = Astro.props;
+
 const waUrl = "https://wa.me/5551996688568?text=PRECISO%20DE%20SOCORRO%20MEC%C3%82NICO%20URGENTE!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:";
 ---
 
@@ -28,24 +41,22 @@ const waUrl = "https://wa.me/5551996688568?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
         <!-- Tag Amarela -->
         <div class="inline-flex items-center bg-brand-yellow text-black px-3 py-2 rounded-full shadow-md w-max max-w-full gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 leading-none flex-shrink-0" fill="currentColor" viewBox="0 -960 960 960"><path d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 400Q306-224 223-346.5T140-571q0-153 100.5-251T480-920q139 0 239.5 98t100.5 251q0 148-83 270.5T480-80Z"/></svg>
-            <span class="text-left text-[0.65rem] font-extrabold uppercase tracking-widest leading-snug">
-                Novo Hamburgo, São Leopoldo,<br>Campo Bom e Vale dos Sinos
+            <span class="text-left text-[0.65rem] font-extrabold uppercase tracking-widest leading-snug" set:html={cityTag}>
             </span>
         </div>
 
         <!-- H1 -->
         <h1 class="text-[1.85rem] font-black uppercase text-white
                    drop-shadow-xl leading-tight -mt-1">
-            Carro Parado?<br>
+            {titleLine1}<br>
             <span class="text-brand-yellow">Socorro Mecânico</span><br>
-            Rápido na Estrada e Cidade.
+            {titleLine2}
         </h1>
 
         <!-- Subheadline + prova social juntos -->
         <div class="flex flex-col items-center gap-6">
             <p class="text-gray-200 text-[13.5px] font-medium leading-snug max-w-[290px] drop-shadow">
-                Especialistas em pane mecânica, bateria, pane seca e superaquecimento.
-                Mecânica móvel com reparos no local e atendimento a domicílio.
+                {introText}
             </p>
             <div class="flex items-center gap-2 text-[11px] text-gray-300 font-semibold tracking-wide drop-shadow">
                 <img src="/google-verified.webp" alt="Google Verificado" class="h-4 w-auto object-contain" width="80" height="16" loading="eager" />
@@ -77,17 +88,15 @@ const waUrl = "https://wa.me/5551996688568?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
 
         <span class="inline-block bg-brand-yellow text-black px-4 py-[6px]
                      text-[0.8rem] font-extrabold uppercase tracking-widest
-                     rounded-full shadow-lg leading-tight w-max max-w-full mb-5">
-            📍 Novo Hamburgo, São Leopoldo, Campo Bom e Vale dos Sinos
+                     rounded-full shadow-lg leading-tight w-max max-w-full mb-5" set:html={`📍 ${cityTag}`}>
         </span>
 
         <h1 class="text-5xl font-black uppercase text-white drop-shadow-2xl leading-tight mb-4">
-            Carro Parado? <span class="text-brand-yellow">Socorro Mecânico</span><br>Rápido na Estrada e Cidade.
+            {titleLine1} <span class="text-brand-yellow">Socorro Mecânico</span><br>{titleLine2}
         </h1>
 
         <p class="text-gray-200 text-[17px] font-medium leading-snug max-w-2xl drop-shadow mb-10">
-            Especialistas em pane mecânica, bateria, pane seca e superaquecimento.
-            Mecânica móvel com reparos no local e atendimento a domicílio.
+            {introText}
         </p>
 
         <!-- Prova Social -->

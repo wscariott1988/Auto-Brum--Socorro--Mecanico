@@ -4,9 +4,17 @@ import '../styles/global.css';
 
 interface Props {
 	title: string;
+    description?: string;
+    ogTitle?: string;
+    ogDescription?: string;
 }
 
-const { title } = Astro.props;
+const { 
+    title, 
+    description = "Socorro Mecânico 24h especializado e rápido. Chegamos em 30 minutos na Grande Porto Alegre e Vale dos Sinos.",
+    ogTitle = "Auto Brum | Socorro Mecânico 24h",
+    ogDescription = "Carro Parado? Socorro Mecânico Rápido na Estrada e Cidade. Atendimento 24h em Novo Hamburgo e região."
+} = Astro.props;
 const waUrl = "https://wa.me/5551996688568?text=PRECISO%20DE%20SOCORRO%20MEC%C3%82NICO%20URGENTE!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:";
 ---
 
@@ -46,14 +54,14 @@ const waUrl = "https://wa.me/5551996688568?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Socorro Mecânico 24h especializado e rápido. Chegamos em 30 minutos na Grande Porto Alegre e Vale dos Sinos." />
+    <meta name="description" content={description} />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     
     <!-- Open Graph / WhatsApp Preview -->
-    <meta property="og:title" content="Auto Brum | Socorro Mecânico 24h" />
-    <meta property="og:description" content="Carro Parado? Socorro Mecânico Rápido na Estrada e Cidade. Atendimento 24h em Novo Hamburgo e região." />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://autobrum.com.br" />
     <meta property="og:image" content="/background.webp" />

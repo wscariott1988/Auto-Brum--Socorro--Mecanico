@@ -1,7 +1,19 @@
 ---
-// src/components/Services.astro
+interface Props {
+  customServices?: {
+    icon: string;
+    title: string;
+    desc: string;
+    ctaMobile: string;
+    ctaDesktop: string;
+    waMsg: string;
+  }[];
+}
+
+const { customServices } = Astro.props;
+
 const waBase = "https://wa.me/5551996688568?text=";
-const services = [
+const defaultServices = [
   {
     icon: "handyman",
     title: "Pane Mecânica",
@@ -35,6 +47,8 @@ const services = [
     waMsg: "PRECISO%20DE%20SOCORRO%20T%C3%89RMICO!%20O%20carro%20superaqueceu.%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
   }
 ];
+
+const services = customServices || defaultServices;
 ---
 <section class="max-w-7xl mx-auto px-6 md:px-12 pt-8 pb-20 relative z-10">
     <div class="flex flex-col mb-10">

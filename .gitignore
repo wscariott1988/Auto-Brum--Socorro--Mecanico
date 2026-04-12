@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+# credentials
+credenciais.json.json
+index_urls.py
+requirements.txt

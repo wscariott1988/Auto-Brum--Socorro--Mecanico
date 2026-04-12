@@ -1,5 +1,9 @@
 ---
-// src/components/TrustBar.astro
+interface Props {
+    city?: string;
+}
+
+const { city = "Região Metropolitana" } = Astro.props;
 ---
 <section class="bg-[#161616] border-b border-white/5 relative z-20">
     <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center divide-y md:divide-y-0 md:divide-x divide-white/10">
@@ -9,7 +13,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 md:w-10 md:h-10 text-brand-yellow" fill="currentColor" viewBox="0 -960 960 960"><path d="m344-60-76-128-144-32 14-148-98-112 98-112-14-148 144-32 76-128 136 58 136-58 76 128 144 32-14 148 98 112-98 112 14 148-144 32-76 128-136-58-136 58Zm34-102 102-44 104 44 56-96 110-26-10-112 74-84-74-86 10-112-110-24-58-96-102 44-104-44-56 96-110 24 10 112-74 86 74 84-10 112 110 26 58 96Zm102-168 226-226-56-56-170 170-86-84-56 56 142 140Zm0-150Z"/></svg>
             <div class="flex flex-col items-center md:items-start text-center md:text-left">
                 <span class="uppercase tracking-wider font-bold text-sm md:text-base text-white">Mecânicos Certificados</span>
-                <span class="text-xs text-gray-400 font-medium mt-0.5 hidden md:block">Profissionais com formação técnica</span>
+                <span class="text-xs text-gray-400 font-medium mt-0.5 hidden md:block">Atendimento especializado em {city}</span>
             </div>
         </div>
 

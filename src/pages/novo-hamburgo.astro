@@ -1,0 +1,65 @@
+---
+// src/pages/novo-hamburgo.astro
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import TrustBar from '../components/TrustBar.astro';
+import Services from '../components/Services.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+
+const city = "Novo Hamburgo";
+const introText = "Socorro mecânico em Novo Hamburgo com atendimento rápido na BR-116 e RS-239. Especialistas em pane mecânica, bateria e socorro 24h em bairros como Lomba Grande, Canudos e Centro.";
+
+const localizedServices = [
+  {
+    icon: "handyman",
+    title: "Pane Mecânica NH",
+    desc: "Reparo rápido próximo à Fenac e em toda Novo Hamburgo.",
+    ctaMobile: "SOCORRO EM NOVO HAMBURGO",
+    ctaDesktop: "FALAR COM MECÂNICO NH",
+    waMsg: "PRECISO%20DE%20SOCORRO%20MEC%C3%82NICO%20EM%20NOVO%20HAMBURGO!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  },
+  {
+    icon: "electric_bolt",
+    title: "Bateria 24h NH",
+    desc: "Troca de bateria com entrega rápida em até 30 min em NH.",
+    ctaMobile: "TROCAR BATERIA AGORA",
+    ctaDesktop: "WHATSAPP BATERIA NH",
+    waMsg: "PRECISO%20DE%20BATERIA%20EM%20NOVO%20HAMBURGO!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  },
+  {
+    icon: "local_gas_station",
+    title: "Pane Seca BR-116",
+    desc: "Combustível na hora para quem ficou parado na BR-116 ou RS-239.",
+    ctaMobile: "TRAZER COMBUSTÍVEL",
+    ctaDesktop: "WHATSAPP PANE SECA",
+    waMsg: "ESTOU%20COM%20PANE%20SECA%20EM%20NOVO%20HAMBURGO!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  },
+  {
+    icon: "device_thermostat",
+    title: "Motor Ferveu?",
+    desc: "Atendimento especializado em superaquecimento no Vale dos Sinos.",
+    ctaMobile: "SOCORRO MOTOR NH",
+    ctaDesktop: "FALAR COM TÉCNICO",
+    waMsg: "O%20MOTOR%20FERVEU%20EM%20NOVO%20HAMBURGO!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  }
+];
+---
+
+<Layout 
+    title="Rodrigo Auto Blum | Socorro Mecânico Novo Hamburgo 24h"
+    description={`Precisa de mecânico em ${city}? Atendimento 24h na BR-116, RS-239 e todos os bairros de Novo Hamburgo. Chegamos em 30 min. Ligue agora!`}
+    ogTitle={`Mecânica 24h em ${city} | Rodrigo Auto Blum`}
+    ogDescription={`Socorro mecânico rápido em ${city}. Atendimento na BR-116, Fenac e região. Bateria, pane seca e reparos no local.`}
+>
+	<Hero 
+        cityTag={city} 
+        titleLine1="Mecânico em NH?"
+        titleLine2="Socorro Rápido na BR-116 e RS-239."
+        introText={introText}
+    />
+	<TrustBar city={city} />
+	<Services customServices={localizedServices} />
+    <Testimonials />
+    <FAQ city={city} />
+</Layout>

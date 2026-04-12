@@ -1,0 +1,65 @@
+---
+// src/pages/sao-leopoldo.astro
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import TrustBar from '../components/TrustBar.astro';
+import Services from '../components/Services.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+
+const city = "São Leopoldo";
+const introText = "Socorro mecânico 24h em São Leopoldo. Atendimento imediato na BR-116, RS-240 e bairros como Scharlau, Vicentina e Unisinos. Mecânica móvel para bateria, pane seca e socorro na estrada.";
+
+const localizedServices = [
+  {
+    icon: "handyman",
+    title: "Pane Mecânica SL",
+    desc: "Socorro especializado na BR-116 e entorno da Unisinos.",
+    ctaMobile: "SOCORRO EM SÃO LEOPOLDO",
+    ctaDesktop: "FALAR COM MECÂNICO SL",
+    waMsg: "PRECISO%20DE%20SOCORRO%20MEC%C3%82NICO%20EM%20S%C3%83O%20LEOPOLDO!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  },
+  {
+    icon: "electric_bolt",
+    title: "Bateria em SL",
+    desc: "Troca de bateria 24h em todos os bairros de São Leopoldo.",
+    ctaMobile: "SOLICITAR BATERIA AGORA",
+    ctaDesktop: "WHATSAPP BATERIA SL",
+    waMsg: "PRECISO%20DE%20BATERIA%20EM%20S%C3%83O%20LEOPOLDO!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  },
+  {
+    icon: "local_gas_station",
+    title: "Pane Seca RS-240",
+    desc: "Envio de combustível rápido na região da Scharlau e RS-240.",
+    ctaMobile: "PRECISO DE GASOLINA/DIESEL",
+    ctaDesktop: "WHATSAPP PANE SECA SL",
+    waMsg: "ESTOU%20COM%20PANE%20SECA%20EM%20S%C3%83O%20LEOPOLDO!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  },
+  {
+    icon: "device_thermostat",
+    title: "Superaquecimento",
+    desc: "Seu carro ferveu em São Leopoldo? Atendimento móvel 24h.",
+    ctaMobile: "SOCORRO TÉRMICO SL",
+    ctaDesktop: "FALAR COM TÉCNICO",
+    waMsg: "O%20MOTOR%20FERVEU%20EM%20S%C3%83O%20LEOPOLDO!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  }
+];
+---
+
+<Layout 
+    title="Rodrigo Auto Blum | Socorro Mecânico São Leopoldo 24h"
+    description={`Socorro mecânico 24h em ${city}. Atendimento rápido na BR-116, Scharlau e região da Unisinos. Chegamos em 30 min para bateria e pane mecânica.`}
+    ogTitle={`Mecânica 24h em ${city} | Rodrigo Auto Blum`}
+    ogDescription={`Precisa de mecânico em ${city}? Atendimento urgente na BR-116, RS-240 e bairros. Socorro para bateria, pane seca e mais.`}
+>
+	<Hero 
+        cityTag={city} 
+        titleLine1="Mecânico em São Leo?"
+        titleLine2="Socorro Rápido na BR-116 e Scharlau."
+        introText={introText}
+    />
+	<TrustBar city={city} />
+	<Services customServices={localizedServices} />
+    <Testimonials />
+    <FAQ city={city} />
+</Layout>

@@ -1,9 +1,13 @@
 ---
-// src/components/SocialProof.astro
+interface Props {
+  city?: string;
+}
+
+const { city = "" } = Astro.props;
 ---
 <section class="bg-[#0e0e0e] py-16 px-6 relative z-10 border-y border-white/5">
     <div class="max-w-7xl mx-auto">
-        <h2 class="text-2xl font-black uppercase text-center mb-12 text-white">Depoimentos Reais</h2>
+        <h2 class="text-2xl font-black uppercase text-center mb-12 text-white">Depoimentos Reais {city ? `em ${city}` : ''}</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="bg-[#1b1b1b] border-t-2 border-brand-yellow p-6 rounded shadow-xl hover:-translate-y-1 transition-transform">
