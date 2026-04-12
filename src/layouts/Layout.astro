@@ -26,6 +26,7 @@ const waUrl = "https://wa.me/5551996688568?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
     <!-- Global conversion tracking script -->
     <script is:inline>
     function gtag_report_conversion(url) {
+      console.log('gtag_report_conversion called with url:', url);
       var callback = function () {
         if (typeof(url) != 'undefined') {
           window.location = url;
