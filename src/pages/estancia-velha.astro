@@ -2,6 +2,7 @@
 // src/pages/estancia-velha.astro
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import TrustPhoto from '../components/TrustPhoto.astro';
 import HowCanWeHelp from '../components/HowCanWeHelp.astro';
 import Services from '../components/Services.astro';
 import Testimonials from '../components/Testimonials.astro';
@@ -52,6 +53,7 @@ const localizedServices = [
     ogDescription={`Socorro mecânico rápido em ${city}. Atendimento na RS-239 e bairros como Bela Vista e Encosta do Sol. Reparamos no local.`}
 >
 	<Hero cityTag={city} />
+	<TrustPhoto />
 	<HowCanWeHelp />
     <Testimonials />
 	<Services customServices={localizedServices} />

@@ -2,6 +2,7 @@
 // src/pages/novo-hamburgo.astro
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import TrustPhoto from '../components/TrustPhoto.astro';
 import HowCanWeHelp from '../components/HowCanWeHelp.astro';
 import Services from '../components/Services.astro';
 import Testimonials from '../components/Testimonials.astro';
@@ -52,6 +53,7 @@ const localizedServices = [
     ogDescription={`Socorro mecânico rápido em ${city}. Atendimento na BR-116, Fenac e região. Bateria, pane seca e reparos no local.`}
 >
 	<Hero cityTag={city} />
+	<TrustPhoto />
 	<HowCanWeHelp />
     <Testimonials />
 	<Services customServices={localizedServices} />

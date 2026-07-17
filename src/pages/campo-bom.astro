@@ -2,6 +2,7 @@
 // src/pages/campo-bom.astro
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import TrustPhoto from '../components/TrustPhoto.astro';
 import HowCanWeHelp from '../components/HowCanWeHelp.astro';
 import Services from '../components/Services.astro';
 import Testimonials from '../components/Testimonials.astro';
@@ -52,6 +53,7 @@ const localizedServices = [
     ogDescription={`Precisa de mecânico em ${city}? Atendimento urgente na RS-239 e bairros como Centro e Quatro Colônias.`}
 >
 	<Hero cityTag={city} />
+	<TrustPhoto />
 	<HowCanWeHelp />
     <Testimonials />
 	<Services customServices={localizedServices} />
