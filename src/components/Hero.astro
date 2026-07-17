@@ -1,16 +1,10 @@
 ---
 interface Props {
     cityTag?: string;
-    titleLine1?: string;
-    titleLine2?: string;
-    introText?: string;
 }
 
 const {
-    cityTag = "Novo Hamburgo, São Leopoldo,<br>Campo Bom e Vale dos Sinos",
-    titleLine1 = "Carro Parado?",
-    titleLine2 = "Rápido na Estrada e Cidade.",
-    introText = "Especialistas em pane mecânica, bateria, pane seca e superaquecimento. Mecânica móvel com reparos no local e atendimento a domicílio."
+    cityTag = "Novo Hamburgo, São Leopoldo, Campo Bom e Vale dos Sinos",
 } = Astro.props;
 
 const waUrl = "https://wa.me/5551998860146?text=PRECISO%20DE%20SOCORRO%20MEC%C3%82NICO%20URGENTE!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:";
@@ -18,7 +12,7 @@ const waUrl = "https://wa.me/5551998860146?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
 
 <section class="relative min-h-[100dvh] flex flex-col overflow-hidden px-5 md:px-20">
 
-    <!-- Fundo otimizado para LCP (Maior Pintura com Conteúdo) -->
+    <!-- Fundo otimizado para LCP -->
     <div class="absolute inset-0 z-0 overflow-hidden">
         <picture>
             <source srcset="/background.desktop.webp" media="(min-width: 768px)" />
@@ -34,101 +28,189 @@ const waUrl = "https://wa.me/5551998860146?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
         <div class="absolute inset-0 bg-black/90"></div>
     </div>
 
-    <!-- MOBILE: bloco único centralizado -->
-    <div class="md:hidden relative z-10 flex flex-col items-center justify-center text-center
-                min-h-[100dvh] pb-20 pt-16 px-5 gap-6">
+    <!-- ==========================================
+         MOBILE LAYOUT
+         ========================================== -->
+    <div class="md:hidden relative z-10 flex flex-col items-center text-center
+                min-h-[100dvh] pb-20 pt-16 px-5 gap-5">
 
-        <!-- Tag Amarela -->
+        <!-- Badge Amarelo: Cidades -->
         <div class="inline-flex items-center bg-brand-yellow text-black px-3 py-2 rounded-full shadow-md w-max max-w-full gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 leading-none flex-shrink-0" fill="currentColor" viewBox="0 -960 960 960"><path d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 400Q306-224 223-346.5T140-571q0-153 100.5-251T480-920q139 0 239.5 98t100.5 251q0 148-83 270.5T480-80Z"/></svg>
-            <span class="text-left text-[0.65rem] font-extrabold uppercase tracking-widest leading-snug" set:html={cityTag}>
-            </span>
+            <span class="text-left text-[0.65rem] font-extrabold uppercase tracking-widest leading-snug">{cityTag}</span>
         </div>
 
-        <!-- H1 -->
-        <h1 class="text-[1.85rem] font-black uppercase text-white
-                   drop-shadow-xl leading-tight -mt-1">
-            {titleLine1}<br>
-            <span class="text-brand-yellow">Socorro Mecânico 24hrs</span><br>
-            {titleLine2}
+        <!-- Título pequeno: urgência -->
+        <h2 class="text-[1.05rem] font-bold uppercase text-white/80 tracking-wider leading-snug mt-2">
+            Carro Parou Agora?
+        </h2>
+
+        <!-- Título principal -->
+        <h1 class="text-[2rem] font-black uppercase text-brand-yellow
+                   drop-shadow-xl leading-tight">
+            Socorro Mecânico<br>24 Horas
         </h1>
 
-        <!-- Subheadline + prova social juntos -->
-        <div class="flex flex-col items-center gap-6">
-            <p class="text-gray-200 text-[13.5px] font-medium leading-snug max-w-[290px] drop-shadow">
-                {introText}
+        <!-- Subtítulo -->
+        <h3 class="text-[1.1rem] font-bold uppercase text-white leading-snug">
+            O mecânico vai até você.
+        </h3>
+
+        <!-- Bloco de valor: guincho -->
+        <div class="w-full max-w-[340px] bg-white/5 border border-white/10 rounded-xl p-4 flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand-yellow flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 -960 960 960"><path d="M784-80 614-250q-11 5-22.5 7.5T568-240q-63 0-107.5-44.5T416-392q0-10 2-21t5-21L80-776l104-104 342 342q10-3 21-5t21-2q63 0 107.5 44.5T720-392q0 12-2.5 23.5T710-346l170 170-96 96ZM496-392q0 33 23.5 56.5T576-312q33 0 56.5-23.5T656-392q0-33-23.5-56.5T576-472q-33 0-56.5 23.5T496-392Z"/></svg>
+            <p class="text-[13px] text-gray-300 leading-snug font-medium">
+                Sempre que possível, resolvemos o problema no local para evitar que você gaste com guincho.
             </p>
-            <div class="flex items-center gap-2 text-[11px] text-gray-300 font-semibold tracking-wide drop-shadow">
-                <img src="/google-verified.webp" alt="Google Verificado" class="h-4 w-auto object-contain" width="80" height="16" loading="eager" />
-                <span><span class="text-yellow-400">⭐⭐⭐⭐⭐</span> 5.0 no Google (100+ avaliações)</span>
+        </div>
+
+        <!-- Lista de benefícios -->
+        <div class="flex flex-col items-start gap-3 w-full max-w-[340px]">
+            <div class="flex items-center gap-2.5">
+                <span class="text-brand-yellow text-base font-black leading-none">✓</span>
+                <span class="text-[14px] font-semibold text-gray-200">Atendimento 24 horas</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+                <span class="text-brand-yellow text-base font-black leading-none">✓</span>
+                <span class="text-[14px] font-semibold text-gray-200">Diagnóstico no local</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+                <span class="text-brand-yellow text-base font-black leading-none">✓</span>
+                <span class="text-[14px] font-semibold text-gray-200">Reparo imediato quando possível</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+                <span class="text-brand-yellow text-base font-black leading-none">✓</span>
+                <span class="text-[14px] font-semibold text-gray-200">Atendimento em Novo Hamburgo, São Leopoldo, Campo Bom e Vale dos Sinos</span>
             </div>
         </div>
 
-        <!-- Botão CHAMAR AGORA → WhatsApp -->
+        <!-- Prova Social -->
+        <div class="flex flex-col items-center gap-1 mt-1">
+            <div class="flex items-center gap-1.5">
+                <span class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</span>
+                <span class="text-[14px] font-bold text-white">5,0 no Google</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-[12px] text-gray-400 font-medium">Mais de 100 avaliações reais</span>
+                <img src="/google-verified.webp" alt="Google Verificado" class="h-4 w-auto object-contain" width="80" height="16" loading="eager" />
+            </div>
+        </div>
+
+        <!-- CTA Principal: WhatsApp -->
         <a href={waUrl} target="_blank" rel="noopener noreferrer"
            onclick={`return gtag_report_conversion('${waUrl}')`}
-           class="w-full max-w-[360px] bg-[#D32732] text-white
-                  flex flex-col items-center justify-center py-[15px]
+           class="w-full max-w-[380px] bg-[#D32732] text-white
+                  flex items-center justify-center gap-3 min-h-[56px]
                   rounded-xl border-2 border-[#ff4a56]
                   drop-shadow-[0_10px_25px_rgba(211,39,50,0.6)]
                   animate-pulse-soft active:scale-95 transition-all duration-300">
-            <div class="flex items-center gap-2 text-[19px] font-black uppercase tracking-widest">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.957-1.396C8.36 21.493 10.106 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.74 0-3.327-.47-4.686-1.28l-.337-.202-2.935.827.842-2.868-.222-.352C3.84 14.802 3.32 13.435 3.32 12c0-4.787 3.893-8.68 8.68-8.68 4.787 0 8.68 3.893 8.68 8.68S16.787 20 12 20zm4.84-5.368c-.266-.134-1.574-.776-1.818-.865-.243-.09-.42-.134-.597.134-.176.268-.685.865-.84 1.044-.154.178-.309.201-.575.067-.266-.134-1.124-.413-2.14-1.319-.79-.705-1.325-1.576-1.48-1.844-.155-.268-.016-.413.118-.546.12-.12.266-.312.4-.468.133-.156.177-.268.266-.446.088-.178.044-.334-.022-.468-.066-.134-.597-1.442-.818-1.977-.215-.522-.43-.45-.597-.458h-.508c-.176 0-.465.067-.708.334-.243.268-.93.914-.93 2.23 0 1.316.953 2.585 1.085 2.764.133.179 1.876 2.855 4.545 4.005.635.273 1.13.437 1.516.56.638.203 1.22.174 1.678.106.51-.076 1.574-.643 1.796-1.265.223-.623.223-1.159.155-1.265-.067-.107-.243-.178-.508-.312z"/></svg>
-                CHAMAR AGORA
-            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.957-1.396C8.36 21.493 10.106 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.74 0-3.327-.47-4.686-1.28l-.337-.202-2.935.827.842-2.868-.222-.352C3.84 14.802 3.32 13.435 3.32 12c0-4.787 3.893-8.68 8.68-8.68 4.787 0 8.68 3.893 8.68 8.68S16.787 20 12 20zm4.84-5.368c-.266-.134-1.574-.776-1.818-.865-.243-.09-.42-.134-.597.134-.176.268-.685.865-.84 1.044-.154.178-.309.201-.575.067-.266-.134-1.124-.413-2.14-1.319-.79-.705-1.325-1.576-1.48-1.844-.155-.268-.016-.413.118-.546.12-.12.266-.312.4-.468.133-.156.177-.268.266-.446.088-.178.044-.334-.022-.468-.066-.134-.597-1.442-.818-1.977-.215-.522-.43-.45-.597-.458h-.508c-.176 0-.465.067-.708.334-.243.268-.93.914-.93 2.23 0 1.316.953 2.585 1.085 2.764.133.179 1.876 2.855 4.545 4.005.635.273 1.13.437 1.516.56.638.203 1.22.174 1.678.106.51-.076 1.574-.643 1.796-1.265.223-.623.223-1.159.155-1.265-.067-.107-.243-.178-.508-.312z"/></svg>
+            <span class="text-[17px] font-black uppercase tracking-widest">Chamar no WhatsApp</span>
         </a>
 
-        <!-- Botão LIGAR AGORA (secundário) -->
+        <!-- Subtexto de confiança -->
+        <div class="flex flex-col items-center gap-0.5 mt-1">
+            <p class="text-[12px] text-gray-400 text-center max-w-[300px] leading-snug">
+                Você falará diretamente com um mecânico.<br>
+                Sem centrais de atendimento.<br>
+                Resposta rápida.
+            </p>
+        </div>
+
+        <!-- Botão Ligar (secundário) -->
         <a href="tel:+5551998860146"
            onclick="return gtag_report_conversion('tel:+5551998860146', 'AW-18084251132/NBsMCNT18JocEPyLn69D')"
-           class="w-full max-w-[360px] bg-white/10 text-white/80
-                  flex items-center justify-center gap-2 py-[10px]
+           class="w-full max-w-[380px] bg-white/5 text-white/50
+                  flex items-center justify-center gap-2 min-h-[44px]
                   rounded-xl border border-white/10
                   active:scale-95 transition-all duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 -960 960 960"><path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13.5 22.5l26 162q2 14-1.5 27T378-596L259-477q56 103 143.5 190.5T593-143l119-119q10-10 23-13t27-1.5l162 26q13 1.5 22.5 12.5T960-244v162q0 18-12 30t-30 12Z"/></svg>
-            <span class="text-[13px] font-bold uppercase tracking-wider">Ligar Agora</span>
-            <span class="text-[12px] font-semibold opacity-70">(51) 99886-0146</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 -960 960 960"><path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13.5 22.5l26 162q2 14-1.5 27T378-596L259-477q56 103 143.5 190.5T593-143l119-119q10-10 23-13t27-1.5l162 26q13 1.5 22.5 12.5T960-244v162q0 18-12 30t-30 12Z"/></svg>
+            <span class="text-[12px] font-bold uppercase tracking-wider">Ligar</span>
+            <span class="text-[11px] font-semibold opacity-70">(51) 99886-0146</span>
         </a>
 
     </div>
 
-    <!-- ============================================
-         DESKTOP LAYOUT: centralizado max-w-4xl
-         ============================================ -->
+    <!-- ==========================================
+         DESKTOP LAYOUT
+         ========================================== -->
     <div class="hidden md:flex flex-col items-center justify-center text-center
                 min-h-[100dvh] w-full max-w-4xl mx-auto gap-0 relative z-10">
 
+        <!-- Badge Amarelo -->
         <span class="inline-block bg-brand-yellow text-black px-4 py-[6px]
                      text-[0.8rem] font-extrabold uppercase tracking-widest
-                     rounded-full shadow-lg leading-tight w-max max-w-full mb-5" set:html={`📍 ${cityTag}`}>
+                     rounded-full shadow-lg leading-tight w-max max-w-full mb-6" set:html={`📍 ${cityTag}`}>
         </span>
 
-        <h1 class="text-5xl font-black uppercase text-white drop-shadow-2xl leading-tight mb-4">
-            {titleLine1} <span class="text-brand-yellow">Socorro Mecânico 24hrs</span><br>{titleLine2}
+        <!-- Título pequeno -->
+        <h2 class="text-lg font-bold uppercase text-white/80 tracking-wider mb-3">
+            Carro Parou Agora?
+        </h2>
+
+        <!-- Título principal -->
+        <h1 class="text-5xl font-black uppercase text-brand-yellow drop-shadow-2xl leading-tight mb-4">
+            Socorro Mecânico 24 Horas
         </h1>
 
-        <p class="text-gray-200 text-[17px] font-medium leading-snug max-w-2xl drop-shadow mb-10">
-            {introText}
-        </p>
+        <!-- Subtítulo -->
+        <h3 class="text-xl font-bold uppercase text-white mb-6">
+            O mecânico vai até você.
+        </h3>
 
-        <!-- Prova Social -->
-        <div class="flex items-center justify-center gap-2 text-[13px] text-gray-300
-                    font-semibold tracking-wide drop-shadow mb-6">
-            <img src="/google-verified.webp" alt="Google Verificado" class="h-6 w-auto object-contain" width="120" height="24" loading="eager" />
-            <span><span class="text-yellow-400">⭐⭐⭐⭐⭐</span> 5.0 no Google (100+ avaliações)</span>
+        <!-- Bloco de valor: guincho -->
+        <div class="bg-white/5 border border-white/10 rounded-xl p-5 flex items-start gap-4 max-w-xl mb-8">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-brand-yellow flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 -960 960 960"><path d="M784-80 614-250q-11 5-22.5 7.5T568-240q-63 0-107.5-44.5T416-392q0-10 2-21t5-21L80-776l104-104 342 342q10-3 21-5t21-2q63 0 107.5 44.5T720-392q0 12-2.5 23.5T710-346l170 170-96 96ZM496-392q0 33 23.5 56.5T576-312q33 0 56.5-23.5T656-392q0-33-23.5-56.5T576-472q-33 0-56.5 23.5T496-392Z"/></svg>
+            <p class="text-[15px] text-gray-300 leading-snug font-medium text-left">
+                Sempre que possível, resolvemos o problema no local para evitar que você gaste com guincho.
+            </p>
         </div>
 
-        <!-- CTA Desktop: WhatsApp (sem pulso) -->
+        <!-- Lista de benefícios -->
+        <div class="flex flex-col items-start gap-3 mb-8">
+            <div class="flex items-center gap-3">
+                <span class="text-brand-yellow text-lg font-black leading-none">✓</span>
+                <span class="text-[15px] font-semibold text-gray-200">Atendimento 24 horas</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="text-brand-yellow text-lg font-black leading-none">✓</span>
+                <span class="text-[15px] font-semibold text-gray-200">Diagnóstico no local</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="text-brand-yellow text-lg font-black leading-none">✓</span>
+                <span class="text-[15px] font-semibold text-gray-200">Reparo imediato quando possível</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="text-brand-yellow text-lg font-black leading-none">✓</span>
+                <span class="text-[15px] font-semibold text-gray-200">Atendimento em Novo Hamburgo, São Leopoldo, Campo Bom e Vale dos Sinos</span>
+            </div>
+        </div>
+
+        <!-- Prova Social -->
+        <div class="flex items-center justify-center gap-3 mb-6">
+            <span class="text-yellow-400 text-base">⭐⭐⭐⭐⭐</span>
+            <span class="text-[14px] font-bold text-white">5,0 no Google</span>
+            <span class="text-[12px] text-gray-400">•</span>
+            <span class="text-[13px] text-gray-300 font-medium">Mais de 100 avaliações reais</span>
+            <img src="/google-verified.webp" alt="Google Verificado" class="h-5 w-auto object-contain" width="100" height="20" loading="eager" />
+        </div>
+
+        <!-- CTA Desktop: WhatsApp -->
         <a href={waUrl} target="_blank" rel="noopener noreferrer"
            onclick={`return gtag_report_conversion('${waUrl}')`}
-           class="flex items-center justify-center gap-3 w-full max-w-[400px]
-                  bg-[#25D366] text-white py-4 rounded-xl font-black uppercase
+           class="flex items-center justify-center gap-3 w-full max-w-[420px]
+                  bg-[#25D366] text-white min-h-[56px] rounded-xl font-black uppercase
                   tracking-widest text-[18px] border-2 border-[#20b558]
                   shadow-[0_15px_30px_rgba(37,211,102,0.4)]
                   hover:brightness-110 active:scale-95 transition-all duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.957-1.396C8.36 21.493 10.106 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.74 0-3.327-.47-4.686-1.28l-.337-.202-2.935.827.842-2.868-.222-.352C3.84 14.802 3.32 13.435 3.32 12c0-4.787 3.893-8.68 8.68-8.68 4.787 0 8.68 3.893 8.68 8.68S16.787 20 12 20zm4.84-5.368c-.266-.134-1.574-.776-1.818-.865-.243-.09-.42-.134-.597.134-.176.268-.685.865-.84 1.044-.154.178-.309.201-.575.067-.266-.134-1.124-.413-2.14-1.319-.79-.705-1.325-1.576-1.48-1.844-.155-.268-.016-.413.118-.546.12-.12.266-.312.4-.468.133-.156.177-.268.266-.446.088-.178.044-.334-.022-.468-.066-.134-.597-1.442-.818-1.977-.215-.522-.43-.45-.597-.458h-.508c-.176 0-.465.067-.708.334-.243.268-.93.914-.93 2.23 0 1.316.953 2.585 1.085 2.764.133.179 1.876 2.855 4.545 4.005.635.273 1.13.437 1.516.56.638.203 1.22.174 1.678.106.51-.076 1.574-.643 1.796-1.265.223-.623.223-1.159.155-1.265-.067-.107-.243-.178-.508-.312z"/></svg>
-            FALAR NO WHATSAPP
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.957-1.396C8.36 21.493 10.106 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.74 0-3.327-.47-4.686-1.28l-.337-.202-2.935.827.842-2.868-.222-.352C3.84 14.802 3.32 13.435 3.32 12c0-4.787 3.893-8.68 8.68-8.68 4.787 0 8.68 3.893 8.68 8.68S16.787 20 12 20zm4.84-5.368c-.266-.134-1.574-.776-1.818-.865-.243-.09-.42-.134-.597.134-.176.268-.685.865-.84 1.044-.154.178-.309.201-.575.067-.266-.134-1.124-.413-2.14-1.319-.79-.705-1.325-1.576-1.48-1.844-.155-.268-.016-.413.118-.546.12-.12.266-.312.4-.468.133-.156.177-.268.266-.446.088-.178.044-.334-.022-.468-.066-.134-.597-1.442-.818-1.977-.215-.522-.43-.45-.597-.458h-.508c-.176 0-.465.067-.708.334-.243.268-.93.914-.93 2.23 0 1.316.953 2.585 1.085 2.764.133.179 1.876 2.855 4.545 4.005.635.273 1.13.437 1.516.56.638.203 1.22.174 1.678.106.51-.076 1.574-.643 1.796-1.265.223-.623.223-1.159.155-1.265-.067-.107-.243-.178-.508-.312z"/></svg>
+            Chamar no WhatsApp
         </a>
+
+        <!-- Subtexto de confiança -->
+        <p class="text-[13px] text-gray-400 text-center mt-4 leading-snug">
+            Você falará diretamente com um mecânico. Sem centrais de atendimento. Resposta rápida.
+        </p>
 
     </div>
 
