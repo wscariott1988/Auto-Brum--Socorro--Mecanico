@@ -21,59 +21,15 @@ const waUrl = "https://wa.me/5551998860146?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
 <!doctype html>
 <html lang="pt-br" class="dark scroll-smooth">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18084251132"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'AW-18084251132');
-
-      // Snippet de conversão de ligações
-      gtag('config', 'AW-18084251132/NBsMCNT18JocEPyLn69D', {
-        'phone_conversion_number': '51998860146'
-      });
-    </script>
-
-    <!-- Global conversion tracking script -->
-    <script is:inline>
-    function gtag_report_conversion(url, sendTo = 'AW-18084251132/dubkCIGV7ZocEPyLn69D') {
-      console.log('gtag_report_conversion called with url:', url, 'send_to:', sendTo);
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.location = url;
-        }
-      };
-      gtag('event', 'conversion', {
-          'send_to': sendTo,
-          'value': 1.0,
-          'currency': 'BRL',
-          'event_callback': callback
-      });
-      return false;
-    }
-    </script>
-
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "xmj9nxdg65");
-    </script>
-
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    
-    <!-- Open Graph / WhatsApp Preview -->
+
+    <!-- Open Graph -->
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={ogDescription} />
     <meta property="og:type" content="website" />
@@ -82,15 +38,75 @@ const waUrl = "https://wa.me/5551998860146?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
-    <title>{title}</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet" />
+    <!-- Google Fonts: CSS inline (apenas latin para nao bloquear) -->
+    <style>
+    @font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:local('Inter Regular'),local('Inter'),url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:local('Inter Bold'),url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:'Inter';font-style:normal;font-weight:800;font-display:swap;src:local('Inter ExtraBold'),url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:'Inter';font-style:normal;font-weight:900;font-display:swap;src:local('Inter Black'),url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    </style>
+    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" crossorigin="anonymous" fetchpriority="high">
 
-    <!-- Performance: Preload LCP Background Image -->
-    <link rel="preload" as="image" href="/background.webp" media="(max-width: 767px)" fetchpriority="high" />
+    <!-- Performance: Preload LCP Background Image com dimensoes -->
+    <link rel="preload" as="image" href="/background.webp" media="(max-width: 767px)" fetchpriority="high" imagesrcset="/background.webp 430w" imagesizes="100vw" />
     <link rel="preload" as="image" href="/background.desktop.webp" media="(min-width: 768px)" fetchpriority="high" />
+
+    <!-- Pulse animation inline (usado no CTA hero) -->
+    <style>@keyframes pulse-soft{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.05);opacity:.8}}.animate-pulse-soft{animation:pulse-soft 2s cubic-bezier(.4,0,.6,1) infinite}</style>
+
+    <!-- FAQ.css carregado sem bloqueio -->
+    <link rel="stylesheet" href="/_astro/FAQ.Bflo2vrC.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="/_astro/FAQ.Bflo2vrC.css" /></noscript>
+
+    <!-- Google Tag Manager (deferido - carrega apos interacao) -->
+    <script is:inline>
+    const gtmLoaded = false;
+    function loadGTM() {
+      if (window.gtmLoaded) return;
+      window.gtmLoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18084251132';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'AW-18084251132');
+      gtag('config', 'AW-18084251132/NBsMCNT18JocEPyLn69D', { 'phone_conversion_number': '51998860146' });
+    }
+    function gtag_report_conversion(url, sendTo) {
+      if (!sendTo) sendTo = 'AW-18084251132/dubkCIGV7ZocEPyLn69D';
+      loadGTM();
+      var callback = function () {
+        if (typeof(url) != 'undefined') window.location = url;
+      };
+      if (window.gtag) {
+        window.gtag('event', 'conversion', {
+            'send_to': sendTo,
+            'value': 1.0,
+            'currency': 'BRL',
+            'event_callback': callback
+        });
+      } else {
+        if (typeof(url) != 'undefined') window.location = url;
+      }
+      return false;
+    }
+    window.addEventListener('scroll', loadGTM, { once: true });
+    window.addEventListener('touchstart', loadGTM, { once: true });
+    window.addEventListener('mousemove', loadGTM, { once: true });
+    </script>
+
+    <!-- Microsoft Clarity (deferido) -->
+    <script is:inline>
+    window.addEventListener('scroll', function(){
+      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xmj9nxdg65");
+    }, { once: true });
+    window.addEventListener('touchstart', function(){
+      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xmj9nxdg65");
+    }, { once: true });
+    </script>
 </head>
 <body class="bg-black text-on-surface font-body antialiased selection:bg-brand-red selection:text-white">
 
