@@ -29,10 +29,10 @@ const waUrl = "https://wa.me/5551998860146?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
     </div>
 
     <!-- ==========================================
-         MOBILE LAYOUT
+         MOBILE LAYOUT - Otimizado para CTA acima da dobra
          ========================================== -->
     <div class="md:hidden relative z-10 flex flex-col items-center text-center
-                min-h-[100dvh] pb-20 pt-16 px-5 gap-5">
+                min-h-[100dvh] pb-20 pt-12 px-5 gap-4">
 
         <!-- Badge Amarelo: Cidades -->
         <div class="inline-flex items-center bg-brand-yellow text-black px-3 py-2 rounded-full shadow-md w-max max-w-full gap-2">
@@ -41,51 +41,27 @@ const waUrl = "https://wa.me/5551998860146?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
         </div>
 
         <!-- Título pequeno: urgência -->
-        <h2 class="text-[1.05rem] font-bold uppercase text-white/80 tracking-wider leading-snug mt-2">
+        <h2 class="text-[1rem] font-bold uppercase text-white/80 tracking-wider leading-snug">
             Carro Parou Agora?
         </h2>
 
-        <!-- Título principal -->
-        <h1 class="text-[2rem] font-black uppercase text-brand-yellow
-                   drop-shadow-xl leading-tight">
-            Socorro Mecânico<br>24 Horas
-        </h1>
+        <!-- Título principal - AGORA LINKÁVEL -->
+        <a href={waUrl} target="_blank" rel="noopener noreferrer"
+           onclick={`return gtag_report_conversion('${waUrl}')`}
+           class="block">
+            <h1 class="text-[1.9rem] font-black uppercase text-brand-yellow
+                       drop-shadow-xl leading-tight hover:brightness-110 transition-all">
+                Socorro Mecânico<br>24 Horas
+            </h1>
+        </a>
 
         <!-- Subtítulo -->
-        <h3 class="text-[1.1rem] font-bold uppercase text-white leading-snug">
+        <h3 class="text-[1.05rem] font-bold uppercase text-white leading-snug">
             O mecânico vai até você.
         </h3>
 
-        <!-- Bloco de valor: guincho -->
-        <div class="w-full max-w-[340px] bg-white/5 border border-white/10 rounded-xl p-4 flex items-start gap-3">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand-yellow flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 -960 960 960"><path d="M784-80 614-250q-11 5-22.5 7.5T568-240q-63 0-107.5-44.5T416-392q0-10 2-21t5-21L80-776l104-104 342 342q10-3 21-5t21-2q63 0 107.5 44.5T720-392q0 12-2.5 23.5T710-346l170 170-96 96ZM496-392q0 33 23.5 56.5T576-312q33 0 56.5-23.5T656-392q0-33-23.5-56.5T576-472q-33 0-56.5 23.5T496-392Z"/></svg>
-            <p class="text-[13px] text-gray-300 leading-snug font-medium">
-                Sempre que possível, resolvemos o problema no local para evitar que você gaste com guincho.
-            </p>
-        </div>
-
-        <!-- Lista de benefícios -->
-        <div class="flex flex-col items-start gap-3 w-full max-w-[340px]">
-            <div class="flex items-center gap-2.5">
-                <span class="text-brand-yellow text-base font-black leading-none">✓</span>
-                <span class="text-[14px] font-semibold text-gray-200">Atendimento 24 horas</span>
-            </div>
-            <div class="flex items-center gap-2.5">
-                <span class="text-brand-yellow text-base font-black leading-none">✓</span>
-                <span class="text-[14px] font-semibold text-gray-200">Diagnóstico no local</span>
-            </div>
-            <div class="flex items-center gap-2.5">
-                <span class="text-brand-yellow text-base font-black leading-none">✓</span>
-                <span class="text-[14px] font-semibold text-gray-200">Reparo imediato quando possível</span>
-            </div>
-            <div class="flex items-center gap-2.5">
-                <span class="text-brand-yellow text-base font-black leading-none">✓</span>
-                <span class="text-[14px] font-semibold text-gray-200">Atendimento em Novo Hamburgo, São Leopoldo, Campo Bom e Vale dos Sinos</span>
-            </div>
-        </div>
-
-        <!-- Prova Social -->
-        <div class="flex flex-col items-center gap-1 mt-1">
+        <!-- Prova Social + CTA - MOVIDO PARA CIMA (dobra) -->
+        <div class="flex flex-col items-center gap-1">
             <div class="flex items-center gap-1.5">
                 <span class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</span>
                 <span class="text-[14px] font-bold text-white">5,0 no Google</span>
@@ -96,7 +72,7 @@ const waUrl = "https://wa.me/5551998860146?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
             </div>
         </div>
 
-        <!-- CTA Principal: WhatsApp -->
+        <!-- CTA Principal: WhatsApp - AGORA BEM VISÍVEL ACIMA DA DOBRA -->
         <a href={waUrl} target="_blank" rel="noopener noreferrer"
            onclick={`return gtag_report_conversion('${waUrl}')`}
            class="w-full max-w-[380px] bg-[#D32732] text-white
@@ -109,7 +85,7 @@ const waUrl = "https://wa.me/5551998860146?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
         </a>
 
         <!-- Subtexto de confiança -->
-        <div class="flex flex-col items-center gap-0.5 mt-1">
+        <div class="flex flex-col items-center gap-0.5">
             <p class="text-[12px] text-gray-400 text-center max-w-[300px] leading-snug">
                 Você falará diretamente com um mecânico.<br>
                 Sem centrais de atendimento.<br>
@@ -128,6 +104,34 @@ const waUrl = "https://wa.me/5551998860146?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
             <span class="text-[12px] font-bold uppercase tracking-wider">Ligar</span>
             <span class="text-[11px] font-semibold opacity-70">(51) 99886-0146</span>
         </a>
+
+        <!-- Bloco de valor: guincho (movido pra baixo do CTA) -->
+        <div class="w-full max-w-[380px] bg-white/5 border border-white/10 rounded-xl p-4 flex items-start gap-3 mt-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand-yellow flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 -960 960 960"><path d="M784-80 614-250q-11 5-22.5 7.5T568-240q-63 0-107.5-44.5T416-392q0-10 2-21t5-21L80-776l104-104 342 342q10-3 21-5t21-2q63 0 107.5 44.5T720-392q0 12-2.5 23.5T710-346l170 170-96 96ZM496-392q0 33 23.5 56.5T576-312q33 0 56.5-23.5T656-392q0-33-23.5-56.5T576-472q-33 0-56.5 23.5T496-392Z"/></svg>
+            <p class="text-[13px] text-gray-300 leading-snug font-medium">
+                Sempre que possível, resolvemos o problema no local para evitar que você gaste com guincho.
+            </p>
+        </div>
+
+        <!-- Lista de benefícios (movida pra baixo do CTA) -->
+        <div class="flex flex-col items-start gap-3 w-full max-w-[380px]">
+            <div class="flex items-center gap-2.5">
+                <span class="text-brand-yellow text-base font-black leading-none">✓</span>
+                <span class="text-[14px] font-semibold text-gray-200">Atendimento 24 horas</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+                <span class="text-brand-yellow text-base font-black leading-none">✓</span>
+                <span class="text-[14px] font-semibold text-gray-200">Diagnóstico no local</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+                <span class="text-brand-yellow text-base font-black leading-none">✓</span>
+                <span class="text-[14px] font-semibold text-gray-200">Reparo imediato quando possível</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+                <span class="text-brand-yellow text-base font-black leading-none">✓</span>
+                <span class="text-[14px] font-semibold text-gray-200">Atendimento em Novo Hamburgo, São Leopoldo, Campo Bom e Vale dos Sinos</span>
+            </div>
+        </div>
 
     </div>
 
