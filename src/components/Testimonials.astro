@@ -1,6 +1,8 @@
 ---
 // src/components/Testimonials.astro
 
+const waUrl = "https://wa.me/5551998860146?text=PRECISO%20DE%20SOCORRO%20MEC%C3%82NICO%20URGENTE!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:";
+
 const reviews = [
   {
     name: "Alice Prado",
@@ -61,7 +63,7 @@ reviews.sort((a, b) => b.text.length - a.text.length);
         <!-- Scroll Track -->
         <div id="testimonial-track" class="flex flex-shrink-0 gap-6">
             {reviews.map((review) => (
-                <a href="https://search.google.com/local/reviews?placeid=ChIJK2KRETNGG5URTEfeNB7GGGY" target="_blank" rel="noopener noreferrer"
+                <a href={waUrl} target="_blank" rel="noopener noreferrer"
                    class="block bg-[#1b1b1b] border border-brand-yellow p-6 rounded shadow-xl flex flex-col w-[300px] md:w-[350px] flex-shrink-0 whitespace-normal snap-center hover:brightness-110 transition-all">
                     <div class="flex text-white mb-4 text-sm gap-1">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-yellow" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -79,7 +81,7 @@ reviews.sort((a, b) => b.text.length - a.text.length);
             
             <!-- Clone for infinite loop -->
             {reviews.map((review) => (
-                <a href="https://search.google.com/local/reviews?placeid=ChIJK2KRETNGG5URTEfeNB7GGGY" target="_blank" rel="noopener noreferrer"
+                <a href={waUrl} target="_blank" rel="noopener noreferrer"
                    class="block bg-[#1b1b1b] border border-brand-yellow p-6 rounded shadow-xl flex flex-col w-[300px] md:w-[350px] flex-shrink-0 whitespace-normal snap-center hover:brightness-110 transition-all" aria-hidden="true">
                     <div class="flex text-white mb-4 text-sm gap-1">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-yellow" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
