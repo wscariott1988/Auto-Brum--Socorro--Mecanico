@@ -47,47 +47,16 @@ const waUrl = "https://wa.me/5551998860146?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
     </style>
     <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" crossorigin="anonymous" fetchpriority="high">
 
+    <!-- Pré-conexão para origens críticas -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://t.contentsquare.net" crossorigin />
+
     <!-- Performance: Preload LCP Background Image com dimensoes -->
     <link rel="preload" as="image" href="/background.webp" media="(max-width: 767px)" fetchpriority="high" imagesrcset="/background.webp 430w" imagesizes="100vw" />
     <link rel="preload" as="image" href="/background.desktop.webp" media="(min-width: 768px)" fetchpriority="high" />
 
     <!-- Pulse animation inline (usado no CTA hero) -->
     <style>@keyframes pulse-soft{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.05);opacity:.8}}.animate-pulse-soft{animation:pulse-soft 2s cubic-bezier(.4,0,.6,1) infinite}</style>
-
-    <!-- FAQ.css carregado sem bloqueio -->
-    <link rel="stylesheet" href="/_astro/FAQ.Bflo2vrC.css" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="/_astro/FAQ.Bflo2vrC.css" /></noscript>
-
-    <!-- Google Tag Manager (deferido - carrega apos interacao) -->
-    <script is:inline>
-    function loadGTM() {
-      if (window.gtmLoaded) return;
-      window.gtmLoaded = true;
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18084251132';
-      document.head.appendChild(s);
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', 'AW-18084251132');
-      gtag('config', 'AW-18084251132/NBsMCNT18JocEPyLn69D', { 'phone_conversion_number': '51998860146' });
-    }
-    window.addEventListener('scroll', loadGTM, { once: true });
-    window.addEventListener('touchstart', loadGTM, { once: true });
-    window.addEventListener('mousemove', loadGTM, { once: true });
-    </script>
-
-    <!-- Microsoft Clarity (deferido) -->
-    <script is:inline>
-    window.addEventListener('scroll', function(){
-      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xmj9nxdg65");
-    }, { once: true });
-    window.addEventListener('touchstart', function(){
-      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xmj9nxdg65");
-    }, { once: true });
-    </script>
 
     <!-- Contentsquare -->
     <script src="https://t.contentsquare.net/uxa/42beb0b5cb3bc.js" defer></script>
@@ -215,6 +184,37 @@ const waUrl = "https://wa.me/5551998860146?text=PRECISO%20DE%20SOCORRO%20MEC%C3%
           }
         }
       });
+    </script>
+
+    <!-- Google Tag Manager (deferido - carrega apos interacao) -->
+    <script is:inline>
+    function loadGTM() {
+      if (window.gtmLoaded) return;
+      window.gtmLoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18084251132';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'AW-18084251132');
+      gtag('config', 'AW-18084251132/NBsMCNT18JocEPyLn69D', { 'phone_conversion_number': '51998860146' });
+    }
+    window.addEventListener('scroll', loadGTM, { once: true });
+    window.addEventListener('touchstart', loadGTM, { once: true });
+    window.addEventListener('mousemove', loadGTM, { once: true });
+    </script>
+
+    <!-- Microsoft Clarity (deferido) -->
+    <script is:inline>
+    window.addEventListener('scroll', function(){
+      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xmj9nxdg65");
+    }, { once: true });
+    window.addEventListener('touchstart', function(){
+      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xmj9nxdg65");
+    }, { once: true });
     </script>
 
 </body>
