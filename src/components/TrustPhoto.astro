@@ -1,4 +1,9 @@
 ---
+interface Props {
+    region?: string;
+}
+
+const { region = "Novo Hamburgo e região" } = Astro.props;
 ---
 <section class="w-full bg-black py-16 md:py-24 relative z-10">
     <div class="max-w-3xl mx-auto px-6 flex flex-col items-center">
@@ -10,7 +15,7 @@
             </div>
             <img
                 src="/foto-real.webp"
-                alt="Mecânico realizando atendimento em veículo na região de Novo Hamburgo"
+                alt={`Mecânico realizando atendimento em veículo na região de ${region}`}
                 loading="eager"
                 fetchpriority="high"
                 decoding="async"
@@ -41,7 +46,7 @@
             </div>
             <div class="flex items-center gap-2">
                 <span class="text-brand-yellow text-base font-black leading-none">✔</span>
-                <span class="text-[13px] font-semibold text-gray-300">Novo Hamburgo e região</span>
+                <span class="text-[13px] font-semibold text-gray-300">{region}</span>
             </div>
         </div>
 

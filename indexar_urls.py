@@ -8,12 +8,13 @@ SERVICE_ACCOUNT_FILE = 'credenciais.json.json'
 SCOPES = ['https://www.googleapis.com/auth/indexing']
 BASE_URL = 'https://www.mecanicaautobrum.com.br'
 
-# Lista das 4 novas landing pages
+# Lista das landing pages por cidade/região
 urls_to_index = [
     f"{BASE_URL}/novo-hamburgo",
     f"{BASE_URL}/sao-leopoldo",
     f"{BASE_URL}/campo-bom",
-    f"{BASE_URL}/estancia-velha"
+    f"{BASE_URL}/estancia-velha",
+    f"{BASE_URL}/grandepoa"
 ]
 
 def indexar_urls():

@@ -1,0 +1,71 @@
+---
+// src/pages/grandepoa.astro
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import TrustPhoto from '../components/TrustPhoto.astro';
+import HowCanWeHelp from '../components/HowCanWeHelp.astro';
+import Services from '../components/Services.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+
+const region = "Canoas, Esteio e Sapucaia do Sul";
+
+const localizedServices = [
+  {
+    id: "carro-nao-liga",
+    icon: "handyman",
+    title: "Carro não liga",
+    desc: "Socorro especializado na BR-116, BR-448 e bairros como Mathias Velho, Guajuviras e Niterói.",
+    ctaMobile: "CHAMAR NO WHATSAPP",
+    ctaDesktop: "CHAMAR NO WHATSAPP",
+    waMsg: "PRECISO%20DE%20SOCORRO%20MEC%C3%82NICO%20EM%20CANOAS%2C%20ESTEIO%20E%20SAPUCAIA%20DO%20SUL!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  },
+  {
+    id: "troca-bateria",
+    icon: "electric_bolt",
+    title: "Troca de bateria no local",
+    desc: "Troca de bateria 24h em todos os bairros de Canoas, Esteio e Sapucaia do Sul.",
+    ctaMobile: "CHAMAR NO WHATSAPP",
+    ctaDesktop: "CHAMAR NO WHATSAPP",
+    waMsg: "PRECISO%20DE%20BATERIA%20EM%20CANOAS%2C%20ESTEIO%20E%20SAPUCAIA%20DO%20SUL!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  },
+  {
+    id: "pane-seca",
+    icon: "local_gas_station",
+    title: "Pane seca",
+    desc: "Envio de combustível rápido na BR-116, RS-118 e Freeway, em toda a Grande POA.",
+    ctaMobile: "CHAMAR NO WHATSAPP",
+    ctaDesktop: "CHAMAR NO WHATSAPP",
+    waMsg: "ESTOU%20COM%20PANE%20SECA%20EM%20CANOAS%2C%20ESTEIO%20OU%20SAPUCAIA%20DO%20SUL!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  },
+  {
+    id: "motor-superaqueceu",
+    icon: "device_thermostat",
+    title: "Motor ferveu",
+    desc: "Seu carro ferveu em Canoas, Esteio ou Sapucaia? Atendimento móvel 24h na hora.",
+    ctaMobile: "CHAMAR NO WHATSAPP",
+    ctaDesktop: "CHAMAR NO WHATSAPP",
+    waMsg: "O%20MOTOR%20FERVEU%20EM%20CANOAS%2C%20ESTEIO%20OU%20SAPUCAIA%20DO%20SUL!%20Minha%20localiza%C3%A7%C3%A3o%20%C3%A9:"
+  }
+];
+---
+
+<Layout 
+    title="Rodrigo Auto Blum | Socorro Mecânico Canoas, Esteio e Sapucaia 24hrs"
+    description={`Socorro mecânico 24h em ${region}. Atendimento na BR-116, BR-448, RS-118 e Freeway, com cobertura de bairros como Mathias Velho, Guajuviras, Novo Esteio e Capão da Cruz. Chegamos em 30 min.`}
+    ogTitle={`Mecânica 24h em ${region} | Rodrigo Auto Blum`}
+    ogDescription={`Precisa de mecânico na Grande Porto Alegre? Socorro urgente em Canoas, Esteio e Sapucaia do Sul. Bateria, pane seca e reparos no local na BR-116 e BR-448.`}
+>
+	<Hero 
+        cityTag="Grande Porto Alegre: Canoas, Esteio e Sapucaia do Sul"
+        serviceArea="Canoas (Centro, Guajuviras, Mathias Velho, Niterói), Esteio (Centro, Novo Esteio, Tamandaré) e Sapucaia do Sul (Centro, Cohab, Capão da Cruz, Nova Sapucaia), além da BR-116, BR-448, RS-118 e Freeway"
+    />
+	<TrustPhoto region="Canoas, Esteio e Sapucaia do Sul" />
+	<HowCanWeHelp />
+    <Testimonials />
+	<Services customServices={localizedServices} />
+    <FAQ 
+        city="Canoas, Esteio e Sapucaia do Sul" 
+        cities="Canoas, Esteio, Sapucaia do Sul e toda a Grande Porto Alegre, incluindo bairros como Guajuviras, Mathias Velho, Niterói, Novo Esteio, Cohab e Capão da Cruz."
+    />
+</Layout>

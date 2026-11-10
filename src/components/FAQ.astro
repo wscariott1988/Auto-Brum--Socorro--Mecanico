@@ -1,9 +1,13 @@
 ---
 interface Props {
     city?: string;
+    cities?: string;
 }
 
-const { city = "sua localização" } = Astro.props;
+const {
+    city = "sua localização",
+    cities = "Novo Hamburgo, São Leopoldo, Campo Bom, Estância Velha, Sapiranga, Nova Hartz, Araricá e Parobé e toda a região do Vale dos Sinos.",
+} = Astro.props;
 ---
 <section class="max-w-3xl mx-auto px-6 py-16 relative z-10">
     <h2 class="text-2xl font-black uppercase mb-10 text-center text-white">Dúvidas Frequentes</h2>
@@ -35,7 +39,7 @@ const { city = "sua localização" } = Astro.props;
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 group-open:rotate-180 transition-transform text-brand-yellow" fill="currentColor" viewBox="0 0 24 24"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
             </summary>
             <div class="px-6 pb-6 text-gray-400 text-sm">
-                Atendemos Novo Hamburgo, São Leopoldo, Campo Bom, Estância Velha, Sapiranga, Nova Hartz, Araricá e Parobé e toda a região do Vale dos Sinos.
+                Atendemos {cities}
             </div>
         </details>
 
